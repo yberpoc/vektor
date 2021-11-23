@@ -1,4 +1,5 @@
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Вектор-ПМ");?>
 
     <!-- BIG BANNER -->
     <section class="big-banner">
