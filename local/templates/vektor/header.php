@@ -7,7 +7,7 @@
 <html lang="<?=LANGUAGE_ID?>">
 
 <head>
-  <title><?$APPLICATION->ShowTitle();?>></title>
+  <title><?$APPLICATION->ShowTitle();?></title>
     <?$APPLICATION->ShowHead();?>
     <?
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/styles.min.css');
@@ -1456,3 +1456,21 @@
   </div>
 
   <main class="main">
+<?if($APPLICATION->GetCurPage() != '/'):?>
+    <!-- BREADCRUMBS -->
+    <?$APPLICATION->IncludeComponent(
+		"bitrix:breadcrumb",
+		"bread",
+		Array(
+			"PATH" => "",
+			"SITE_ID" => "s1",
+			"START_FROM" => "0"
+		)
+	);?>
+    <!-- END BREADCRUMBS -->
+
+
+    <div class="container">
+        <h1 class="inner__title"><?$APPLICATION->ShowTitle(true);?></h1>
+    </div>
+<?endif;?>

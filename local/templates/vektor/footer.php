@@ -319,6 +319,7 @@
   </div>
 
   <div class="dark"></div>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/scripts.min.js"></script>
 </body>
 
 </html>
