@@ -1,0 +1,36 @@
+import './maxHeight';
+import './_header';
+import './_big_banner';
+import './youtubeApi';
+import './player';
+import './_header';
+import './_big_banner';
+import './_tab-toggle';
+import './_slider';
+import './_clients';
+import './_popup';
+import './_reviews';
+import './_form';
+import './_history';
+import './_our-production';
+import './_slider-reviews';
+import './filter';
+import './_compare';
+import './_toggle';
+import './_simple-slider';
+import './_aside-slider';
+import './_order';
+import './_product-card';
+import './_tabs';
+import './file-input';
+import './_card-slider';
+import './_animate';
+import './_career-slider';
+import './_contacts-map';
+import './_news-detail';
+import './_content-slider';
+import './map.js';
+
+
+document.setMaxHeight('.card-list .compare-item__name');
+document.setMaxHeight('.card-list .compare__table-wrap');
