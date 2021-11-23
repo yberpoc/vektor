@@ -1,0 +1,23 @@
+<svg width="70" height="1581" viewBox="0 0 70 1581" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.2257 1576V29.6251H1L29.6866 1L39.1867 10.4798" stroke="#302D8F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M41.7946 394.537V29.6249H58.3733L41.1206 12.4092" stroke="#FF4644" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36.1353 639.252V25.3502H47.4981L29.5004 9.43555L19.814 18.7294" stroke="#F28128" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.9512 20.5166L14.0394 24.42H20.9316V1366.13" stroke="#21ACEC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28.9415 15.127L35.2749 21.4468H31.5494V895.133" stroke="#FDCB2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26.7062 17.1709L22.0493 21.4461H25.7748V1135.13" stroke="#56A277" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M48.5006 12.8965L68.2459 34.0865H47.1967V156.057" stroke="#025BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M50.9569 1576.06L14 1576.06" stroke="#3A3794"/>
+<circle cx="50.6864" cy="1576.06" r="2.74665" transform="rotate(-90 50.6864 1576.06)" fill="#302D8F"/>
+<path d="M46 1366.23L22 1366.23" stroke="#21ACEC"/>
+<circle cx="45.2578" cy="1366.23" r="2.74665" transform="rotate(-90 45.2578 1366.23)" fill="#21ACEC"/>
+<path d="M48 1135.41L25.4999 1135.41" stroke="#56A277"/>
+<circle cx="47.7467" cy="1134.98" r="2.74665" transform="rotate(-90 47.7467 1134.98)" fill="#56A277"/>
+<path d="M46 895.228L31 895.229" stroke="#FDD145"/>
+<circle cx="43.7467" cy="894.746" r="2.74665" transform="rotate(-90 43.7467 894.746)" fill="#FDD145"/>
+<path d="M49.5 639.665L36 639.665" stroke="#F28128"/>
+<circle cx="47.8046" cy="639.665" r="2.74665" transform="rotate(-90 47.8046 639.665)" fill="#F28128"/>
+<path d="M51.5 395.129H41" stroke="#E91022"/>
+<circle cx="49.7467" cy="394.747" r="2.74665" transform="rotate(-90 49.7467 394.747)" fill="#E91022"/>
+<path d="M56 156H47" stroke="#025BFF"/>
+<circle cx="53.1407" cy="155.997" r="2.74665" fill="#025BFF"/>
+</svg>
