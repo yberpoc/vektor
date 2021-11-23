@@ -24,36 +24,24 @@
       <a href="+78001002489" class="footer__phone"><span>8 (800)</span> 100 24 89</a>
       <span class="footer__address">614038, Россия, Пермский край, г. Пермь, улица Академика Веденеева, 80а</span>
     </div>
+
     <div class="footer__col footer__col_menu">
-      <ul class="footer-menu">
-        <li class="footer-menu__item">
-          <a href="" class="footer-menu__link">О заводе</a>
-        </li>
-        <li class="footer-menu__item">
-          <a href="" class="footer-menu__link">Готовые решения</a>
-        </li>
-        <li class="footer-menu__item">
-          <a href="" class="footer-menu__link">Услуги</a>
-        </li>
-        <li class="footer-menu__item">
-          <a href="" class="footer-menu__link">Продукция</a>
-        </li>
-        <li class="footer-menu__item">
-          <a href="" class="footer-menu__link">Пресс-центр</a>
-        </li>
-        <li class="footer-menu__item">
-          <a href="" class="footer-menu__link">Представители</a>
-        </li>
-        <li class="footer-menu__item">
-          <a href="" class="footer-menu__link">Акции</a>
-        </li>
-        <li class="footer-menu__item">
-          <a href="" class="footer-menu__link">Медиатека</a>
-        </li>
-        <li class="footer-menu__item">
-          <a href="" class="footer-menu__link">Контакты</a>
-        </li>
-      </ul>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:menu",
+            "bottom_menu",
+            Array(
+                "ALLOW_MULTI_SELECT" => "N",
+                "CHILD_MENU_TYPE" => "left",
+                "DELAY" => "N",
+                "MAX_LEVEL" => "1",
+                "MENU_CACHE_GET_VARS" => array(""),
+                "MENU_CACHE_TIME" => "3600",
+                "MENU_CACHE_TYPE" => "N",
+                "MENU_CACHE_USE_GROUPS" => "Y",
+                "ROOT_MENU_TYPE" => "bottom",
+                "USE_EXT" => "N"
+            )
+        );?>
       <ul class="footer-social">
         <li class="footer-social__item">
           <a href="" target="_blank" class="footer-social__link">
@@ -319,6 +307,7 @@
   </div>
 
   <div class="dark"></div>
+<script src="<?=SITE_TEMPLATE_PATH?>/js/scripts.min.js"></script>
 </body>
 
 </html>
