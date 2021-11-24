@@ -1,8 +1,7 @@
 <?
 $sSectionName = "Главная";
 $arDirProperties = array(
-   "description" => "",
-   "keywords" => "",
-   "robots" => "index, follow"
+   "robots" => "index, follow",
+   "title" => "ВЕКТОР-ПМ"
 );
 ?>
