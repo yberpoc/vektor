@@ -7,11 +7,10 @@
 <html lang="<?=LANGUAGE_ID?>">
 
 <head>
-  <title><?$APPLICATION->ShowTitle();?>></title>
+  <title><?$APPLICATION->ShowTitle();?></title>
     <?$APPLICATION->ShowHead();?>
     <?
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/styles.min.css');
-        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/scripts.min.js');
         Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">')
     ?>
 </head>
