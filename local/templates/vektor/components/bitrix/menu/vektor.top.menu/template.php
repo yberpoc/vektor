@@ -21,7 +21,7 @@
     		<?elseif ($arItem["DEPTH_LEVEL"] == 2):?>
     			<li class="header-menu__subitem">
                     <a href="<?=$arItem["LINK"]?>" class="header-menu__sublink">
-                        <img src="" alt="" class="header-menu__logo"><?=$arItem["TEXT"]?>
+                        <img src="" alt="ыы картинка" class="header-menu__logo"><?=$arItem["TEXT"]?>
                     </a>
                     <div class="header-menu__catalog">
                         <ul class="header-menu__catalog-list">
