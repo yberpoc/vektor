@@ -526,13 +526,35 @@
 						</div>
 					</div>
 				</div>
-				<a href="" class="header__lang">ENG</a>
+                <!-- ВЫБОР САЙТА (ЯЗЫКА) -->
+				<?$APPLICATION->IncludeComponent(
+					"bitrix:main.site.selector",
+					"lang",
+					Array(
+						"CACHE_TIME" => "3600",
+						"CACHE_TYPE" => "A",
+						"COMPONENT_TEMPLATE" => ".default",
+						"SITE_LIST" => ""
+					)
+				);?>
+                <!-- END ВЫБОР САЙТА (ЯЗЫКА) -->
 			</div>
 		</div>
 		<!-- mobile -->
 		<div class="header-mobile">
 			<div class="header-mobile__top">
-				<a href="" class="header-mobile__lang">ENG</a>
+                <!-- ВЫБОР САЙТА (ЯЗЫКА) МОБИЛЬНАЯ ВЕРСИЯ -->
+				<?$APPLICATION->IncludeComponent(
+					"bitrix:main.site.selector",
+					"lang_mobile",
+					Array(
+						"CACHE_TIME" => "3600",
+						"CACHE_TYPE" => "A",
+						"COMPONENT_TEMPLATE" => ".default",
+						"SITE_LIST" => ""
+					)
+				);?>
+                <!-- END ВЫБОР САЙТА (ЯЗЫКА) МОБИЛЬНАЯ ВЕРСИЯ -->
 				<a href="" class="header-mobile__call">
 					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
@@ -1455,21 +1477,21 @@
   </div>
 
   <main class="main">
-<?if($APPLICATION->GetCurPage() != '/'):?>
-    <!-- BREADCRUMBS -->
-    <?$APPLICATION->IncludeComponent(
-		"bitrix:breadcrumb",
-		"bread",
-		Array(
-			"PATH" => "",
-			"SITE_ID" => "s1",
-			"START_FROM" => "0"
-		)
-	);?>
-    <!-- END BREADCRUMBS -->
+    <?if($APPLICATION->GetCurPage() != '/'):?>
+        <!-- BREADCRUMBS -->
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:breadcrumb",
+            "bread",
+            Array(
+                "PATH" => "",
+                "SITE_ID" => "s1",
+                "START_FROM" => "0"
+            )
+        );?>
+        <!-- END BREADCRUMBS -->
 
 
-    <div class="container">
-        <h1 class="inner__title"><?$APPLICATION->ShowTitle(true);?></h1>
-    </div>
-<?endif;?>
+        <div class="container">
+            <h1 class="inner__title"><?$APPLICATION->ShowTitle(true);?></h1>
+        </div>
+    <?endif;?>
