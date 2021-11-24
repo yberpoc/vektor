@@ -3,7 +3,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 global $APPLICATION;
 
-$aMenuLinksExt = $APPLICATION->IncludeComponent("bitrix:menu.sections", "", array(
+$aMenuLinksExt = $APPLICATION->IncludeComponent("vektorcmp:menu.sections.catalog", "", array(
     "IS_SEF" => "Y",
     "SEF_BASE_URL" => "",
     "SECTION_PAGE_URL" => "#SECTION_ID#/",
