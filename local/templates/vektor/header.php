@@ -11,7 +11,6 @@
     <?$APPLICATION->ShowHead();?>
     <?
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/styles.min.css');
-        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/scripts.min.js');
         Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">')
     ?>
 </head>
@@ -87,16 +86,19 @@
 					</a>
 					<div class="header-search__container">
 						<button class="header-search__close"></button>
-						<form action="" class="header-search__form">
-							<input type="text" class="header-search__input input" placeholder="Начните вводить слово">
-							<button class="header-search__submit" type="submit">
-								<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M17 16.9999L13.1333 13.1332M15.2222 8.1111C15.2222 12.0385 12.0385 15.2222 8.1111 15.2222C4.18375 15.2222 1 12.0385 1 8.1111C1 4.18375 4.18375 1 8.1111 1C12.0385 1 15.2222 4.18375 15.2222 8.1111Z"
-										stroke="#00318A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-								</svg>
-							</button>
-						</form>
+
+
+                        <?$APPLICATION->IncludeComponent(
+                            "bitrix:search.form",
+                            "searrrch",
+                            Array(
+                                "PAGE" => "#SITE_DIR#search/index.php",
+                                "USE_SUGGEST" => "N"
+                            )
+                        );?>
+
+
+
 						<div class="header-search__lists">
 							<ul class="header-search__list">
 								<li class="header-search__item">
