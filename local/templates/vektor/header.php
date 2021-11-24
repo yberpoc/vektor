@@ -7,7 +7,7 @@
 <html lang="<?=LANGUAGE_ID?>">
 
 <head>
-  <title><?$APPLICATION->ShowTitle();?>></title>
+  <title><?$APPLICATION->ShowTitle();?></title>
     <?$APPLICATION->ShowHead();?>
     <?
         Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/styles.min.css');
@@ -60,292 +60,23 @@
 		</div>
 		<div class="header-bottom">
 			<div class="container header-bottom__container">
-				<nav class="header-menu">
-					<ul class="header-menu__list">
-						<li class="header-menu__item header-menu__item_big">
-							<a href="" class="header-menu__link">Продукция</a>
-							<ul class="header-menu__sublist">
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">
-										<img src="<?=SITE_TEMPLATE_PATH?>/img/menu-logo-1.svg" alt="" class="header-menu__logo">
-										Весы и весовая электроника
-									</a>
-									<div class="header-menu__catalog">
-										<ul class="header-menu__catalog-list">
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Крановые весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Выгонные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Тензометрические датчики</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Напольные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Крановые весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Выгонные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Тензометрические датчики</a>
-											</li>
-									
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Тензометрические датчики</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Напольные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автомобильные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Весоизмерительные приборы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автоматизация взвешивания</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Модернизация механических весов</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Дополнительное оборудование</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Программное обеспечение</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Сервисные услуги</a>
-											</li>
-										</ul>
-										<a href="" class="header-menu__news" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/header-news.jpg);">
-											<div class="header-menu__news-info">
-												<span class="header-menu__news-title">Итоги выставки "Нефть и газ. Химия-2019"</span>
-												<svg class="header-menu__news-arrow" width="22" height="18" viewBox="0 0 22 18" fill="none"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M12.6712 2.12161C12.2978 1.72794 12.3059 1.10843 12.6896 0.724748C13.0871 0.327272 13.7338 0.334889 14.1218 0.741615L22.0001 9L14.1218 17.2584C13.7338 17.6651 13.0871 17.6727 12.6896 17.2753C12.3059 16.8916 12.2978 16.2721 12.6712 15.8784L18.2477 10H1C0.447715 10 0 9.55229 0 9C0 8.44771 0.447716 8 1 8H18.2477L12.6712 2.12161Z"
-														fill="white" />
-												</svg>
-											</div>
-										</a>
-									</div>
-								</li>
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">
-										<img src="<?=SITE_TEMPLATE_PATH?>/img/menu-logo-2.svg" alt="" class="header-menu__logo">
-										Приборостроение
-									</a>
-									<div class="header-menu__catalog">
-										<ul class="header-menu__catalog-list">
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Крановые весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Выгонные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Тензометрические датчики</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Напольные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автомобильные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Весоизмерительные приборы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автоматизация взвешивания</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Модернизация механических весов</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Дополнительное оборудование</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Программное обеспечение</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Сервисные услуги</a>
-											</li>
-										</ul>
-										<a href="" class="header-menu__news" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/header-news.jpg);">
-											<div class="header-menu__news-info">
-												<span class="header-menu__news-title">Итоги выставки "Нефть и газ. Химия-2019"</span>
-												<svg class="header-menu__news-arrow" width="22" height="18" viewBox="0 0 22 18" fill="none"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M12.6712 2.12161C12.2978 1.72794 12.3059 1.10843 12.6896 0.724748C13.0871 0.327272 13.7338 0.334889 14.1218 0.741615L22.0001 9L14.1218 17.2584C13.7338 17.6651 13.0871 17.6727 12.6896 17.2753C12.3059 16.8916 12.2978 16.2721 12.6712 15.8784L18.2477 10H1C0.447715 10 0 9.55229 0 9C0 8.44771 0.447716 8 1 8H18.2477L12.6712 2.12161Z"
-														fill="white" />
-												</svg>
-											</div>
-										</a>
-									</div>
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">
-										<img src="<?=SITE_TEMPLATE_PATH?>/img/menu-logo-3.svg" alt="" class="header-menu__logo">
-										Гидроцилиндры
-									</a>
-									<div class="header-menu__catalog">
-										<ul class="header-menu__catalog-list">
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Крановые весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Выгонные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Тензометрические датчики</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Напольные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автомобильные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Весоизмерительные приборы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автоматизация взвешивания</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Модернизация механических весов</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Дополнительное оборудование</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Программное обеспечение</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Сервисные услуги</a>
-											</li>
-										</ul>
-										<a href="" class="header-menu__news" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/header-news.jpg);">
-											<div class="header-menu__news-info">
-												<span class="header-menu__news-title">Итоги выставки "Нефть и газ. Химия-2019"</span>
-												<svg class="header-menu__news-arrow" width="22" height="18" viewBox="0 0 22 18" fill="none"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M12.6712 2.12161C12.2978 1.72794 12.3059 1.10843 12.6896 0.724748C13.0871 0.327272 13.7338 0.334889 14.1218 0.741615L22.0001 9L14.1218 17.2584C13.7338 17.6651 13.0871 17.6727 12.6896 17.2753C12.3059 16.8916 12.2978 16.2721 12.6712 15.8784L18.2477 10H1C0.447715 10 0 9.55229 0 9C0 8.44771 0.447716 8 1 8H18.2477L12.6712 2.12161Z"
-														fill="white" />
-												</svg>
-											</div>
-										</a>
-									</div>
-								</li>
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">
-										<img src="<?=SITE_TEMPLATE_PATH?>/img/menu-logo-4.svg" alt="" class="header-menu__logo">
-										Вся Продукция <br> от а до я
-									</a>
-									<div class="header-menu__catalog">
-										<ul class="header-menu__catalog-list">
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Крановые весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Выгонные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Тензометрические датчики</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Напольные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автомобильные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Весоизмерительные приборы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автоматизация взвешивания</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Модернизация механических весов</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Дополнительное оборудование</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Программное обеспечение</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Сервисные услуги</a>
-											</li>
-										</ul>
-										<a href="" class="header-menu__news" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/header-news.jpg);">
-											<div class="header-menu__news-info">
-												<span class="header-menu__news-title">Итоги выставки "Нефть и газ. Химия-2019"</span>
-												<svg class="header-menu__news-arrow" width="22" height="18" viewBox="0 0 22 18" fill="none"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M12.6712 2.12161C12.2978 1.72794 12.3059 1.10843 12.6896 0.724748C13.0871 0.327272 13.7338 0.334889 14.1218 0.741615L22.0001 9L14.1218 17.2584C13.7338 17.6651 13.0871 17.6727 12.6896 17.2753C12.3059 16.8916 12.2978 16.2721 12.6712 15.8784L18.2477 10H1C0.447715 10 0 9.55229 0 9C0 8.44771 0.447716 8 1 8H18.2477L12.6712 2.12161Z"
-														fill="white" />
-												</svg>
-											</div>
-										</a>
-									</div>
-								</li>
-							</ul>
-						</li>
-						<li class="header-menu__item header-menu__item_active">
-							<a href="" class="header-menu__link">О заводе</a>
-							<ul class="header-menu__sublist">
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">Клиенты и партнеры</a>
-									<ul class="header-menu__sublist">
-										<li class="header-menu__subitem">
-											<a href="" class="header-menu__sublink">Клиенты и партнеры</a>
-										</li>
-										<li class="header-menu__subitem">
-											<a href="" class="header-menu__sublink">Отзывы</a>
-										</li>
-									</ul>
-								</li>
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">Отзывы</a>
-								</li>
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">Сертификаты</a>
-								</li>
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">Работа у нас</a>
-								</li>
-							</ul>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Готовые решения</a>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Пресс-центр</a>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Медиатека</a>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Акции</a>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Услуги</a>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Представители</a>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Контакты</a>
-						</li>
-					</ul>
-				</nav>
+                <?$APPLICATION->IncludeComponent("bitrix:menu", "vektor.top.menu", Array(
+	                "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+	                	"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+	                	"DELAY" => "N",	// Откладывать выполнение шаблона меню
+	                	"MAX_LEVEL" => "3",	// Уровень вложенности меню
+	                	"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+	                		0 => "",
+	                	),
+	                	"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+	                	"MENU_CACHE_TYPE" => "N",	// Тип кеширования
+	                	"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+	                	"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+	                	"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+	                ),
+	                false
+                );?>
+				
 				<div class="header-search">
 					<a href="" class="header-search__button">
 						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
