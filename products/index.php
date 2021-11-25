@@ -3,7 +3,11 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Продукция");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:catalog", 
+<<<<<<< HEAD
 	".default", 
+=======
+	"vektor.catalog", 
+>>>>>>> a3e429f0856b53a0e13f11430fa7a9a7fa628fe8
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "N",
@@ -145,8 +149,13 @@ $APPLICATION->SetTitle("Продукция");
 		"SECTION_BACKGROUND_IMAGE" => "-",
 		"SECTION_COUNT_ELEMENTS" => "Y",
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
+<<<<<<< HEAD
 		"SECTION_TOP_DEPTH" => "2",
 		"SEF_MODE" => "Y",
+=======
+		"SECTION_TOP_DEPTH" => "1",
+		"SEF_MODE" => "N",
+>>>>>>> a3e429f0856b53a0e13f11430fa7a9a7fa628fe8
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "Y",
@@ -189,14 +198,19 @@ $APPLICATION->SetTitle("Продукция");
 		"USE_REVIEW" => "N",
 		"USE_SALE_BESTSELLERS" => "Y",
 		"USE_STORE" => "N",
+<<<<<<< HEAD
 		"COMPONENT_TEMPLATE" => ".default",
 		"SEF_FOLDER" => "/products/",
+=======
+		"COMPONENT_TEMPLATE" => "vektor.catalog",
+>>>>>>> a3e429f0856b53a0e13f11430fa7a9a7fa628fe8
 		"TOP_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
 		"TOP_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
 		"TOP_ENLARGE_PRODUCT" => "STRICT",
 		"TOP_SHOW_SLIDER" => "Y",
 		"TOP_SLIDER_INTERVAL" => "3000",
 		"TOP_SLIDER_PROGRESS" => "N",
+<<<<<<< HEAD
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",
@@ -208,6 +222,11 @@ $APPLICATION->SetTitle("Продукция");
 			"compare" => array(
 				"ACTION_CODE" => "action",
 			),
+=======
+		"VARIABLE_ALIASES" => array(
+			"ELEMENT_ID" => "ELEMENT_ID",
+			"SECTION_ID" => "SECTION_ID",
+>>>>>>> a3e429f0856b53a0e13f11430fa7a9a7fa628fe8
 		)
 	),
 	false
