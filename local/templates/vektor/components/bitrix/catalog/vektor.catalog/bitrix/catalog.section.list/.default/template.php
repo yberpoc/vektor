@@ -170,11 +170,23 @@ if (0 < $arResult["SECTIONS_COUNT"])
 			$intCurrentDepth = 1;
 			$boolFirst = true;
 
+
+
+
+
 			foreach ($arResult['SECTIONS'] as &$arSection) {
+                $dbSection = CIBlockSection::GetList(Array(), array("ID" => $arSection["ID"], "IBLOCK_ID" => 5), false ,Array("UF_SECTION_COLOR", "UF_SLIDER_IMAGES"));
+                $arSections = $dbSection->GetNext();
+
                 $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
                 $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
-                $classColor = "red";
-
+                if ($arSections["UF_SECTION_COLOR"] == 1){
+                    $classColor = "red";
+                } elseif ($arSections["UF_SECTION_COLOR"] == 2) {
+                    $classColor = "blue";
+                } elseif ($arSections["UF_SECTION_COLOR"] == 3) {
+                    $classColor = "purple";
+                }
                 ?>
             <section class="section slider slider_catalog-<?=$classColor?> slider_<?=$classColor?> slider_catalog" id="<?=$this->GetEditAreaId($arSection['ID']);?>">
                 <div class="slider__container container">
@@ -232,8 +244,7 @@ if (0 < $arResult["SECTIONS_COUNT"])
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide slider__item slider__item_image">
                                     <div class="slider__image-outer">
-                                        <div class="slider__image-block slider__image-block_<?=$classColor?>" style="background-image: url(<?=$arSection["PICTURE"]["SRC"]?>)">
-                                        </div>
+                                            <div class="slider__image-block slider__image-block_<?=$classColor?>" style="background-image: url(<?=$arSection["PICTURE"]["SRC"]?>)"></div>
                                     </div>
                                 </div>
                             </div>
