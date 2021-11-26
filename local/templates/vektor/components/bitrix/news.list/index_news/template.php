@@ -65,7 +65,7 @@ $this->setFrameMode(true);
                 <?endif;?>
             <?endif;?>
 
-            <a href="<?=$arResult["DETAIL_PAGE_URL"];?>">
+            <a href="<?echo $arItem["DETAIL_PAGE_URL"]?>">
                 <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect y="9" width="24" height="2" fill="#025BFF" />
                     <path d="M14.5859 1.41421L16.0002 0L26.0001 10L23.2577 10L14.5859 1.41421Z" fill="#025BFF" />
