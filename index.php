@@ -1862,6 +1862,7 @@ $APPLICATION->SetTitle("ВЕКТОР-ПМ");?>
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
+
             <div class="popup popup_side" id="form-popup">
                 <div class="popup__close"></div>
                 <?$APPLICATION->IncludeComponent(
