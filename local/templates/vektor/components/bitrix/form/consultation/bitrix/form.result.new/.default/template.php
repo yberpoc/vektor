@@ -46,7 +46,7 @@
                             </div>
                         <?else:?>
                             <div class="form__input">
-                                <input type="<?=$arQuestion["STRUCTURE"][0]["FIELD_TYPE"]?>" name="<?=$tagName?>" autocomplete="on" >
+                                <input class="form__field" type="<?=$arQuestion["STRUCTURE"][0]["FIELD_TYPE"]?>" name="<?=$tagName?>" autocomplete="on" >
                                 <label for="<?=$tagName?>"><?=$arQuestion["CAPTION"]?></label>
                                 <?if($arQuestion['REQUIRED'] == 'Y'):?>
                                     <div class="form__input-status"><?=$arResult['REQUIRED_STAR']?></div>

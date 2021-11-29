@@ -1211,19 +1211,46 @@
   </div>
 
   <main class="main">
-    <?if($APPLICATION->GetCurPage() != '/'):?>
-        <!-- BREADCRUMBS -->
-        <?$APPLICATION->IncludeComponent(
-            "bitrix:breadcrumb",
-            "bread",
-            Array(
-                "PATH" => "",
-                "SITE_ID" => "s1",
-                "START_FROM" => "0"
-            )
-        );?>
+    <?if($APPLICATION->GetCurPage() != '/' && $APPLICATION->GetCurDir() == '/products/'):?>
+    <!-- BREADCRUMBS -->
+	    <?$APPLICATION->IncludeComponent(
+		    "bitrix:breadcrumb",
+		    "bread",
+		    Array(
+			    "PATH" => "",
+			    "SITE_ID" => "s1",
+			    "START_FROM" => "0"
+		    )
+	    );?>
         <!-- END BREADCRUMBS -->
+        <div class="container">
+			<h1><?=$APPLICATION->ShowTitle(true);?></h1>
+		</div>
+    <?elseif($APPLICATION->GetCurPage() != '/' && CSite::InDir('/products/')):?>
 
+            <!-- BREADCRUMBS -->
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:breadcrumb",
+                "bread",
+                Array(
+                    "PATH" => "",
+                    "SITE_ID" => "s1",
+                    "START_FROM" => "0"
+                )
+            );?>
+            <!-- END BREADCRUMBS -->
+    <?elseif($APPLICATION->GetCurPage() != '/'):?>
+        <!-- BREADCRUMBS -->
+	    <?$APPLICATION->IncludeComponent(
+		    "bitrix:breadcrumb",
+		    "bread",
+		    Array(
+			    "PATH" => "",
+			    "SITE_ID" => "s1",
+			    "START_FROM" => "0"
+		    )
+	    );?>
+        <!-- END BREADCRUMBS -->
 
         <div class="container">
             <h1 class="inner__title"><?$APPLICATION->ShowTitle(true);?></h1>

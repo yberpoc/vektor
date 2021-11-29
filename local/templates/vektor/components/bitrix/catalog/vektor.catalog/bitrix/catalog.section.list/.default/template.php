@@ -50,21 +50,21 @@ if ('Y' == $arParams['SHOW_PARENT_NAME'] && 0 < $arResult['SECTION']['ID'])
 	$this->AddDeleteAction($arResult['SECTION']['ID'], $arResult['SECTION']['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 
 	?><h1
-		class="<? echo $arCurView['TITLE']; ?>"
-		id="<? echo $this->GetEditAreaId($arResult['SECTION']['ID']); ?>"
-	><a href="<? echo $arResult['SECTION']['SECTION_PAGE_URL']; ?>"><?
+    class="<? echo $arCurView['TITLE']; ?>"
+    id="<? echo $this->GetEditAreaId($arResult['SECTION']['ID']); ?>"
+    ><a href="<? echo $arResult['SECTION']['SECTION_PAGE_URL']; ?>"><?
 		echo (
-			isset($arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"]) && $arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"] != ""
+		isset($arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"]) && $arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"] != ""
 			? $arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"]
 			: $arResult['SECTION']['NAME']
 		);
-	?></a></h1><?
+		?></a></h1><?
 }
 if (0 < $arResult["SECTIONS_COUNT"])
 {
-?>
+	?>
 
-<?
+	<?
 	switch ($arParams['VIEW_MODE'])
 	{
 		case 'LINE':
@@ -77,56 +77,56 @@ if (0 < $arResult["SECTIONS_COUNT"])
 					$arSection['PICTURE'] = array(
 						'SRC' => $arCurView['EMPTY_IMG'],
 						'ALT' => (
-							'' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
+						'' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
 							? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
 							: $arSection["NAME"]
 						),
 						'TITLE' => (
-							'' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
+						'' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
 							? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
 							: $arSection["NAME"]
 						)
 					);
 				?><li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>">
-				<a
-					href="<? echo $arSection['SECTION_PAGE_URL']; ?>"
-					class="bx_catalog_line_img"
-					style="background-image: url('<? echo $arSection['PICTURE']['SRC']; ?>');"
-					title="<? echo $arSection['PICTURE']['TITLE']; ?>"
-				></a>
-				<h2 class="bx_catalog_line_title"><a href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
-				if ($arParams["COUNT_ELEMENTS"] && $arSection['ELEMENT_CNT'] !== null)
-				{
-					?> <span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span><?
-				}
-				?></h2><?
+                <a
+                        href="<? echo $arSection['SECTION_PAGE_URL']; ?>"
+                        class="bx_catalog_line_img"
+                        style="background-image: url('<? echo $arSection['PICTURE']['SRC']; ?>');"
+                        title="<? echo $arSection['PICTURE']['TITLE']; ?>"
+                ></a>
+                <h2 class="bx_catalog_line_title"><a href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
+					if ($arParams["COUNT_ELEMENTS"] && $arSection['ELEMENT_CNT'] !== null)
+					{
+						?> <span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span><?
+					}
+					?></h2><?
 				if ('' != $arSection['DESCRIPTION'])
 				{
 					?><p class="bx_catalog_line_description"><? echo $arSection['DESCRIPTION']; ?></p><?
 				}
 				?><div style="clear: both;"></div>
-				</li><?
+                </li><?
 			}
 			unset($arSection);
 			break;
 		case 'TEXT':
-            echo 'TEXT';
+			echo 'TEXT';
 			foreach ($arResult['SECTIONS'] as &$arSection)
 			{
 				$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 				$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 
 				?><li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>"><h2 class="bx_catalog_text_title"><a href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
-				if ($arParams["COUNT_ELEMENTS"] && $arSection['ELEMENT_CNT'] !== null)
-				{
-					?> <span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span><?
-				}
-				?></h2></li><?
+					if ($arParams["COUNT_ELEMENTS"] && $arSection['ELEMENT_CNT'] !== null)
+					{
+						?> <span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span><?
+					}
+					?></h2></li><?
 			}
 			unset($arSection);
 			break;
 		case 'TILE':
-		    echo 'TITLE';
+			echo 'TITLE';
 			foreach ($arResult['SECTIONS'] as &$arSection)
 			{
 				$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
@@ -136,23 +136,23 @@ if (0 < $arResult["SECTIONS_COUNT"])
 					$arSection['PICTURE'] = array(
 						'SRC' => $arCurView['EMPTY_IMG'],
 						'ALT' => (
-							'' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
+						'' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
 							? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
 							: $arSection["NAME"]
 						),
 						'TITLE' => (
-							'' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
+						'' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
 							? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
 							: $arSection["NAME"]
 						)
 					);
 				?><li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>">
-				<a
-					href="<? echo $arSection['SECTION_PAGE_URL']; ?>"
-					class="bx_catalog_tile_img"
-					style="background-image:url('<? echo $arSection['PICTURE']['SRC']; ?>');"
-					title="<? echo $arSection['PICTURE']['TITLE']; ?>"
-					> </a><?
+            <a
+                    href="<? echo $arSection['SECTION_PAGE_URL']; ?>"
+                    class="bx_catalog_tile_img"
+                    style="background-image:url('<? echo $arSection['PICTURE']['SRC']; ?>');"
+                    title="<? echo $arSection['PICTURE']['TITLE']; ?>"
+            > </a><?
 				if ('Y' != $arParams['HIDE_SECTION_NAME'])
 				{
 					?><h2 class="bx_catalog_tile_title"><a href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
@@ -160,7 +160,7 @@ if (0 < $arResult["SECTIONS_COUNT"])
 					{
 						?> <span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span><?
 					}
-				?></h2><?
+					?></h2><?
 				}
 				?></li><?
 			}
@@ -170,12 +170,24 @@ if (0 < $arResult["SECTIONS_COUNT"])
 			$intCurrentDepth = 1;
 			$boolFirst = true;
 
-			foreach ($arResult['SECTIONS'] as &$arSection) {
-                $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
-                $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
-                $classColor = "red";
 
-                ?>
+
+
+
+			foreach ($arResult['SECTIONS'] as &$arSection) {
+				$dbSection = CIBlockSection::GetList(Array(), array("ID" => $arSection["ID"], "IBLOCK_ID" => 5), false ,Array("UF_SECTION_COLOR", "UF_SLIDER_IMAGES"));
+				$arSections = $dbSection->GetNext();
+
+				$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
+				$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
+				if ($arSections["UF_SECTION_COLOR"] == 1){
+					$classColor = "red";
+				} elseif ($arSections["UF_SECTION_COLOR"] == 2) {
+					$classColor = "blue";
+				} elseif ($arSections["UF_SECTION_COLOR"] == 3) {
+					$classColor = "purple";
+				}
+				?>
             <section class="section slider slider_catalog-<?=$classColor?> slider_<?=$classColor?> slider_catalog" id="<?=$this->GetEditAreaId($arSection['ID']);?>">
                 <div class="slider__container container">
                     <div class="slider__inner">
@@ -232,8 +244,7 @@ if (0 < $arResult["SECTIONS_COUNT"])
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide slider__item slider__item_image">
                                     <div class="slider__image-outer">
-                                        <div class="slider__image-block slider__image-block_<?=$classColor?>" style="background-image: url(<?=$arSection["PICTURE"]["SRC"]?>)">
-                                        </div>
+                                        <div class="slider__image-block slider__image-block_<?=$classColor?>" style="background-image: url(<?=$arSection["PICTURE"]["SRC"]?>)"></div>
                                     </div>
                                 </div>
                             </div>
@@ -244,8 +255,8 @@ if (0 < $arResult["SECTIONS_COUNT"])
 			}
 			break;
 	}
-?>
+	?>
 
-<?
+	<?
 	echo ('LINE' != $arParams['VIEW_MODE'] ? '<div style="clear: both;"></div>' : '');
 }
