@@ -21,7 +21,7 @@ if ($arParams['POSITION_FIXED'] == 'Y')
 	$mainClass .= ' fix '.($arParams['POSITION'][0] == 'bottom' ? 'bottom' : 'top').' '.($arParams['POSITION'][1] == 'right' ? 'right' : 'left');
 }
 $style = ($itemCount == 0 ? ' style="display: none;"' : '');
-?><div id="<?=$idCompareCount; ?>" class="<?=$mainClass; ?> "<?=$style; ?>><?
+?><div id="<?=$idCompareCount; ?>" class="<?=$mainClass; ?>"<?=$style; ?>><?
 unset($style, $mainClass);
 if ($needReload)
 {

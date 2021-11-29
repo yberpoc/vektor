@@ -1,6 +1,6 @@
 var jshover = function()
 {
-	var menuDiv = document.getElementById("vita-top-menu")
+	var menuDiv = document.getElementById("horizontal-multilevel-menu")
 	if (!menuDiv)
 		return;
 
