@@ -41,7 +41,10 @@
                 "USE_EXT" => "N"
             )
         );?>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 05691d476438fad2c2ef9f4cb2cbbd84eac3912b
       <ul class="footer-social">
         <li class="footer-social__item">
           <a href="" target="_blank" class="footer-social__link">

@@ -3,7 +3,11 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Продукция");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:catalog", 
+<<<<<<< HEAD
+	".default", 
+=======
 	"maria-catalog", 
+>>>>>>> 05691d476438fad2c2ef9f4cb2cbbd84eac3912b
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "N",
@@ -220,6 +224,17 @@ $APPLICATION->SetTitle("Продукция");
 		"USE_REVIEW" => "N",
 		"USE_SALE_BESTSELLERS" => "N",
 		"USE_STORE" => "N",
+<<<<<<< HEAD
+		"COMPONENT_TEMPLATE" => ".default",
+		"TOP_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
+		"TOP_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
+		"TOP_ENLARGE_PRODUCT" => "STRICT",
+		"TOP_SHOW_SLIDER" => "Y",
+		"TOP_SLIDER_INTERVAL" => "3000",
+		"TOP_SLIDER_PROGRESS" => "N",
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
+		),
+=======
 		"COMPONENT_TEMPLATE" => "maria-catalog",
 		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
 		),
@@ -230,6 +245,7 @@ $APPLICATION->SetTitle("Продукция");
 			"compare" => "compare.php?action=#ACTION_CODE#",
 			"smart_filter" => "#SECTION_CODE_PATH#/filter/#SMART_FILTER_PATH#/apply/",
 		),
+>>>>>>> 05691d476438fad2c2ef9f4cb2cbbd84eac3912b
 		"VARIABLE_ALIASES" => array(
 			"compare" => array(
 				"ACTION_CODE" => "action",
