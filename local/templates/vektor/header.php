@@ -59,292 +59,23 @@
 		</div>
 		<div class="header-bottom">
 			<div class="container header-bottom__container">
-				<nav class="header-menu">
-					<ul class="header-menu__list">
-						<li class="header-menu__item header-menu__item_big">
-							<a href="" class="header-menu__link">Продукция</a>
-							<ul class="header-menu__sublist">
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">
-										<img src="<?=SITE_TEMPLATE_PATH?>/img/menu-logo-1.svg" alt="" class="header-menu__logo">
-										Весы и весовая электроника
-									</a>
-									<div class="header-menu__catalog">
-										<ul class="header-menu__catalog-list">
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Крановые весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Выгонные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Тензометрические датчики</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Напольные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Крановые весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Выгонные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Тензометрические датчики</a>
-											</li>
-									
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Тензометрические датчики</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Напольные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автомобильные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Весоизмерительные приборы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автоматизация взвешивания</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Модернизация механических весов</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Дополнительное оборудование</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Программное обеспечение</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Сервисные услуги</a>
-											</li>
-										</ul>
-										<a href="" class="header-menu__news" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/header-news.jpg);">
-											<div class="header-menu__news-info">
-												<span class="header-menu__news-title">Итоги выставки "Нефть и газ. Химия-2019"</span>
-												<svg class="header-menu__news-arrow" width="22" height="18" viewBox="0 0 22 18" fill="none"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M12.6712 2.12161C12.2978 1.72794 12.3059 1.10843 12.6896 0.724748C13.0871 0.327272 13.7338 0.334889 14.1218 0.741615L22.0001 9L14.1218 17.2584C13.7338 17.6651 13.0871 17.6727 12.6896 17.2753C12.3059 16.8916 12.2978 16.2721 12.6712 15.8784L18.2477 10H1C0.447715 10 0 9.55229 0 9C0 8.44771 0.447716 8 1 8H18.2477L12.6712 2.12161Z"
-														fill="white" />
-												</svg>
-											</div>
-										</a>
-									</div>
-								</li>
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">
-										<img src="<?=SITE_TEMPLATE_PATH?>/img/menu-logo-2.svg" alt="" class="header-menu__logo">
-										Приборостроение
-									</a>
-									<div class="header-menu__catalog">
-										<ul class="header-menu__catalog-list">
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Крановые весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Выгонные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Тензометрические датчики</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Напольные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автомобильные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Весоизмерительные приборы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автоматизация взвешивания</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Модернизация механических весов</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Дополнительное оборудование</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Программное обеспечение</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Сервисные услуги</a>
-											</li>
-										</ul>
-										<a href="" class="header-menu__news" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/header-news.jpg);">
-											<div class="header-menu__news-info">
-												<span class="header-menu__news-title">Итоги выставки "Нефть и газ. Химия-2019"</span>
-												<svg class="header-menu__news-arrow" width="22" height="18" viewBox="0 0 22 18" fill="none"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M12.6712 2.12161C12.2978 1.72794 12.3059 1.10843 12.6896 0.724748C13.0871 0.327272 13.7338 0.334889 14.1218 0.741615L22.0001 9L14.1218 17.2584C13.7338 17.6651 13.0871 17.6727 12.6896 17.2753C12.3059 16.8916 12.2978 16.2721 12.6712 15.8784L18.2477 10H1C0.447715 10 0 9.55229 0 9C0 8.44771 0.447716 8 1 8H18.2477L12.6712 2.12161Z"
-														fill="white" />
-												</svg>
-											</div>
-										</a>
-									</div>
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">
-										<img src="<?=SITE_TEMPLATE_PATH?>/img/menu-logo-3.svg" alt="" class="header-menu__logo">
-										Гидроцилиндры
-									</a>
-									<div class="header-menu__catalog">
-										<ul class="header-menu__catalog-list">
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Крановые весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Выгонные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Тензометрические датчики</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Напольные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автомобильные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Весоизмерительные приборы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автоматизация взвешивания</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Модернизация механических весов</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Дополнительное оборудование</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Программное обеспечение</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Сервисные услуги</a>
-											</li>
-										</ul>
-										<a href="" class="header-menu__news" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/header-news.jpg);">
-											<div class="header-menu__news-info">
-												<span class="header-menu__news-title">Итоги выставки "Нефть и газ. Химия-2019"</span>
-												<svg class="header-menu__news-arrow" width="22" height="18" viewBox="0 0 22 18" fill="none"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M12.6712 2.12161C12.2978 1.72794 12.3059 1.10843 12.6896 0.724748C13.0871 0.327272 13.7338 0.334889 14.1218 0.741615L22.0001 9L14.1218 17.2584C13.7338 17.6651 13.0871 17.6727 12.6896 17.2753C12.3059 16.8916 12.2978 16.2721 12.6712 15.8784L18.2477 10H1C0.447715 10 0 9.55229 0 9C0 8.44771 0.447716 8 1 8H18.2477L12.6712 2.12161Z"
-														fill="white" />
-												</svg>
-											</div>
-										</a>
-									</div>
-								</li>
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">
-										<img src="<?=SITE_TEMPLATE_PATH?>/img/menu-logo-4.svg" alt="" class="header-menu__logo">
-										Вся Продукция <br> от а до я
-									</a>
-									<div class="header-menu__catalog">
-										<ul class="header-menu__catalog-list">
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Крановые весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Выгонные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Тензометрические датчики</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Напольные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автомобильные весы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Весоизмерительные приборы</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Автоматизация взвешивания</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Модернизация механических весов</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Дополнительное оборудование</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Программное обеспечение</a>
-											</li>
-											<li class="header-menu__catalog-item">
-												<a href="" class="header-menu__catalog-link">Сервисные услуги</a>
-											</li>
-										</ul>
-										<a href="" class="header-menu__news" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/header-news.jpg);">
-											<div class="header-menu__news-info">
-												<span class="header-menu__news-title">Итоги выставки "Нефть и газ. Химия-2019"</span>
-												<svg class="header-menu__news-arrow" width="22" height="18" viewBox="0 0 22 18" fill="none"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M12.6712 2.12161C12.2978 1.72794 12.3059 1.10843 12.6896 0.724748C13.0871 0.327272 13.7338 0.334889 14.1218 0.741615L22.0001 9L14.1218 17.2584C13.7338 17.6651 13.0871 17.6727 12.6896 17.2753C12.3059 16.8916 12.2978 16.2721 12.6712 15.8784L18.2477 10H1C0.447715 10 0 9.55229 0 9C0 8.44771 0.447716 8 1 8H18.2477L12.6712 2.12161Z"
-														fill="white" />
-												</svg>
-											</div>
-										</a>
-									</div>
-								</li>
-							</ul>
-						</li>
-						<li class="header-menu__item header-menu__item_active">
-							<a href="" class="header-menu__link">О заводе</a>
-							<ul class="header-menu__sublist">
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">Клиенты и партнеры</a>
-									<ul class="header-menu__sublist">
-										<li class="header-menu__subitem">
-											<a href="" class="header-menu__sublink">Клиенты и партнеры</a>
-										</li>
-										<li class="header-menu__subitem">
-											<a href="" class="header-menu__sublink">Отзывы</a>
-										</li>
-									</ul>
-								</li>
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">Отзывы</a>
-								</li>
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">Сертификаты</a>
-								</li>
-								<li class="header-menu__subitem">
-									<a href="" class="header-menu__sublink">Работа у нас</a>
-								</li>
-							</ul>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Готовые решения</a>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Пресс-центр</a>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Медиатека</a>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Акции</a>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Услуги</a>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Представители</a>
-						</li>
-						<li class="header-menu__item">
-							<a href="" class="header-menu__link">Контакты</a>
-						</li>
-					</ul>
-				</nav>
+                <?$APPLICATION->IncludeComponent("bitrix:menu", "vektor.top.menu", Array(
+	                "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+	                	"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+	                	"DELAY" => "N",	// Откладывать выполнение шаблона меню
+	                	"MAX_LEVEL" => "3",	// Уровень вложенности меню
+	                	"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+	                		0 => "",
+	                	),
+	                	"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+	                	"MENU_CACHE_TYPE" => "N",	// Тип кеширования
+	                	"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+	                	"ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+	                	"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+	                ),
+	                false
+                );?>
+				
 				<div class="header-search">
 					<a href="" class="header-search__button">
 						<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1284,176 +1015,68 @@
     </div>
   </header>
 	<!-- END FIXED HEADER -->
-	
+
 
 	<div class="order">
     <div class="container order__container">
       <div class="order__close"></div>
-      <div class="order-items">
-        <h2 class="order-items__title">Ваш заказ</h2>
-        <ul class="order-items__list">
-          <li class="order-items__item">
-            <button class="order-items__delete">
-              <svg class="order-items__delete-icon" width="17" height="21" viewBox="0 0 17 21" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <rect x="0.5" y="3" width="16" height="4" rx="2" stroke="#999999" />
-                <path d="M2.5 7H14.5V18.5C14.5 19.3284 13.8284 20 13 20H4C3.17157 20 2.5 19.3284 2.5 18.5V7Z"
-                  stroke="#999999" />
-                <path
-                  d="M5.5 17.2429C5.77619 17.2429 6 17.0296 6 16.7665V11.4265C6 11.1633 5.77619 10.9501 5.5 10.9501C5.22381 10.9501 5 11.1633 5 11.4265V16.7665C5 17.0296 5.22381 17.2429 5.5 17.2429Z"
-                  fill="#999999" />
-                <path
-                  d="M8.5 17.2429C8.77619 17.2429 9 17.0296 9 16.7665V11.4265C9 11.1633 8.77619 10.9501 8.5 10.9501C8.22381 10.9501 8 11.1633 8 11.4265V16.7665C8.00476 17.0296 8.22857 17.2429 8.5 17.2429Z"
-                  fill="#999999" />
-                <path
-                  d="M11.5 17.2429C11.7762 17.2429 12 17.0296 12 16.7665V11.4265C12 11.1633 11.7762 10.9501 11.5 10.9501C11.2238 10.9501 11 11.1633 11 11.4265V16.7665C11 17.0296 11.2238 17.2429 11.5 17.2429Z"
-                  fill="#999999" />
-                <path
-                  d="M11.2716 2.35195C11.3581 2.56077 11.4205 2.77819 11.458 3H8.5L5.54196 3C5.57945 2.77819 5.64187 2.56077 5.72836 2.35195C5.87913 1.98797 6.1001 1.65726 6.37868 1.37868C6.65726 1.1001 6.98797 0.879125 7.35195 0.728361C7.71593 0.577597 8.10603 0.5 8.5 0.5C8.89397 0.5 9.28407 0.577597 9.64805 0.728361C10.012 0.879125 10.3427 1.1001 10.6213 1.37868C10.8999 1.65726 11.1209 1.98797 11.2716 2.35195Z"
-                  stroke="#999999" />
-              </svg>
-              <span class="order-items__delete-text">удалить из корзины</span>
-            </button>
-            <a href="#" class="order-items__img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/order-1.jpg);"></a>
-            <a href="#" class="order-items__name">Автомобильные весы до 15 тонн</a>
-            <div class="order-items__price"></div>
-            <div class="order-items__count">
-              <button class="order-items__minus">-</button>
-              <span class="order-items__value">1</span>
-              <button class="order-items__plus">+</button>
-            </div>
-          </li>
-          <li class="order-items__item">
-            <button class="order-items__delete">
-              <svg class="order-items__delete-icon" width="17" height="21" viewBox="0 0 17 21" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <rect x="0.5" y="3" width="16" height="4" rx="2" stroke="#999999" />
-                <path d="M2.5 7H14.5V18.5C14.5 19.3284 13.8284 20 13 20H4C3.17157 20 2.5 19.3284 2.5 18.5V7Z"
-                  stroke="#999999" />
-                <path
-                  d="M5.5 17.2429C5.77619 17.2429 6 17.0296 6 16.7665V11.4265C6 11.1633 5.77619 10.9501 5.5 10.9501C5.22381 10.9501 5 11.1633 5 11.4265V16.7665C5 17.0296 5.22381 17.2429 5.5 17.2429Z"
-                  fill="#999999" />
-                <path
-                  d="M8.5 17.2429C8.77619 17.2429 9 17.0296 9 16.7665V11.4265C9 11.1633 8.77619 10.9501 8.5 10.9501C8.22381 10.9501 8 11.1633 8 11.4265V16.7665C8.00476 17.0296 8.22857 17.2429 8.5 17.2429Z"
-                  fill="#999999" />
-                <path
-                  d="M11.5 17.2429C11.7762 17.2429 12 17.0296 12 16.7665V11.4265C12 11.1633 11.7762 10.9501 11.5 10.9501C11.2238 10.9501 11 11.1633 11 11.4265V16.7665C11 17.0296 11.2238 17.2429 11.5 17.2429Z"
-                  fill="#999999" />
-                <path
-                  d="M11.2716 2.35195C11.3581 2.56077 11.4205 2.77819 11.458 3H8.5L5.54196 3C5.57945 2.77819 5.64187 2.56077 5.72836 2.35195C5.87913 1.98797 6.1001 1.65726 6.37868 1.37868C6.65726 1.1001 6.98797 0.879125 7.35195 0.728361C7.71593 0.577597 8.10603 0.5 8.5 0.5C8.89397 0.5 9.28407 0.577597 9.64805 0.728361C10.012 0.879125 10.3427 1.1001 10.6213 1.37868C10.8999 1.65726 11.1209 1.98797 11.2716 2.35195Z"
-                  stroke="#999999" />
-              </svg>
-              <span class="order-items__delete-text">удалить из корзины</span>
-            </button>
-            <a href="#" class="order-items__img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/order-2.jpg);"></a>
-            <a href="" class="order-items__name">Автомобильные весы до 15 тонн</a>
-            <div class="order-items__price">1 999 999 ₽</div>
-            <div class="order-items__count">
-              <button class="order-items__minus">-</button>
-              <span class="order-items__value">1</span>
-              <button class="order-items__plus">+</button>
-            </div>
-          </li>
-          <li class="order-items__item">
-            <button class="order-items__delete">
-              <svg class="order-items__delete-icon" width="17" height="21" viewBox="0 0 17 21" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <rect x="0.5" y="3" width="16" height="4" rx="2" stroke="#999999" />
-                <path d="M2.5 7H14.5V18.5C14.5 19.3284 13.8284 20 13 20H4C3.17157 20 2.5 19.3284 2.5 18.5V7Z"
-                  stroke="#999999" />
-                <path
-                  d="M5.5 17.2429C5.77619 17.2429 6 17.0296 6 16.7665V11.4265C6 11.1633 5.77619 10.9501 5.5 10.9501C5.22381 10.9501 5 11.1633 5 11.4265V16.7665C5 17.0296 5.22381 17.2429 5.5 17.2429Z"
-                  fill="#999999" />
-                <path
-                  d="M8.5 17.2429C8.77619 17.2429 9 17.0296 9 16.7665V11.4265C9 11.1633 8.77619 10.9501 8.5 10.9501C8.22381 10.9501 8 11.1633 8 11.4265V16.7665C8.00476 17.0296 8.22857 17.2429 8.5 17.2429Z"
-                  fill="#999999" />
-                <path
-                  d="M11.5 17.2429C11.7762 17.2429 12 17.0296 12 16.7665V11.4265C12 11.1633 11.7762 10.9501 11.5 10.9501C11.2238 10.9501 11 11.1633 11 11.4265V16.7665C11 17.0296 11.2238 17.2429 11.5 17.2429Z"
-                  fill="#999999" />
-                <path
-                  d="M11.2716 2.35195C11.3581 2.56077 11.4205 2.77819 11.458 3H8.5L5.54196 3C5.57945 2.77819 5.64187 2.56077 5.72836 2.35195C5.87913 1.98797 6.1001 1.65726 6.37868 1.37868C6.65726 1.1001 6.98797 0.879125 7.35195 0.728361C7.71593 0.577597 8.10603 0.5 8.5 0.5C8.89397 0.5 9.28407 0.577597 9.64805 0.728361C10.012 0.879125 10.3427 1.1001 10.6213 1.37868C10.8999 1.65726 11.1209 1.98797 11.2716 2.35195Z"
-                  stroke="#999999" />
-              </svg>
-              <span class="order-items__delete-text">удалить из корзины</span>
-            </button>
-            <a href="#" class="order-items__img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/order-1.jpg);"></a>
-            <a href="" class="order-items__name">Автомобильные весы до 15 тонн</a>
-            <div class="order-items__price"></div>
-            <div class="order-items__count">
-              <button class="order-items__minus">-</button>
-              <span class="order-items__value">1</span>
-              <button class="order-items__plus">+</button>
-            </div>
-          </li>
-          <li class="order-items__item">
-            <button class="order-items__delete">
-              <svg class="order-items__delete-icon" width="17" height="21" viewBox="0 0 17 21" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <rect x="0.5" y="3" width="16" height="4" rx="2" stroke="#999999" />
-                <path d="M2.5 7H14.5V18.5C14.5 19.3284 13.8284 20 13 20H4C3.17157 20 2.5 19.3284 2.5 18.5V7Z"
-                  stroke="#999999" />
-                <path
-                  d="M5.5 17.2429C5.77619 17.2429 6 17.0296 6 16.7665V11.4265C6 11.1633 5.77619 10.9501 5.5 10.9501C5.22381 10.9501 5 11.1633 5 11.4265V16.7665C5 17.0296 5.22381 17.2429 5.5 17.2429Z"
-                  fill="#999999" />
-                <path
-                  d="M8.5 17.2429C8.77619 17.2429 9 17.0296 9 16.7665V11.4265C9 11.1633 8.77619 10.9501 8.5 10.9501C8.22381 10.9501 8 11.1633 8 11.4265V16.7665C8.00476 17.0296 8.22857 17.2429 8.5 17.2429Z"
-                  fill="#999999" />
-                <path
-                  d="M11.5 17.2429C11.7762 17.2429 12 17.0296 12 16.7665V11.4265C12 11.1633 11.7762 10.9501 11.5 10.9501C11.2238 10.9501 11 11.1633 11 11.4265V16.7665C11 17.0296 11.2238 17.2429 11.5 17.2429Z"
-                  fill="#999999" />
-                <path
-                  d="M11.2716 2.35195C11.3581 2.56077 11.4205 2.77819 11.458 3H8.5L5.54196 3C5.57945 2.77819 5.64187 2.56077 5.72836 2.35195C5.87913 1.98797 6.1001 1.65726 6.37868 1.37868C6.65726 1.1001 6.98797 0.879125 7.35195 0.728361C7.71593 0.577597 8.10603 0.5 8.5 0.5C8.89397 0.5 9.28407 0.577597 9.64805 0.728361C10.012 0.879125 10.3427 1.1001 10.6213 1.37868C10.8999 1.65726 11.1209 1.98797 11.2716 2.35195Z"
-                  stroke="#999999" />
-              </svg>
-              <span class="order-items__delete-text">удалить из корзины</span>
-            </button>
-            <a href="#" class="order-items__img" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/order-2.jpg);"></a>
-            <a href="" class="order-items__name">Автомобильные весы до 15 тонн</a>
-            <div class="order-items__price"></div>
-            <div class="order-items__count">
-              <button class="order-items__minus">-</button>
-              <span class="order-items__value">1</span>
-              <button class="order-items__plus">+</button>
-            </div>
-          </li>
-        </ul>
-        <a href="" class="order-items__button button button_transparent button_blue">Добавить еще товары в заказ</a>
-      </div>
-      <form class="order-form" novalidate>
-        <h2 class="order-form__title">Рассчитать цену на весь заказ</h2>
-        <div class="order-form__desc">
-          <p>Для запроса стоимости или заказа заполните форму.</p>
-          <p>Чем больше информации мы получим, тем точнее и быстрее будет наш ответ.</p>
-          <p>Поля, отмеченные * - обязательны для заполнения</p>
-        </div>
-        <div class="order-form__inputs">
-          <div class="form__input order-form__input">
-            <input type="text" name="name" class="input" required>
-            <label>Введите ваше имя*:</label>
-            <div class="form__input-status"></div>
-						<div class="message form__input-message">Это поле обязательно для заполнения, пример заполнения: Добрыня</div>
-          </div>
-          <div class="form__input order-form__input">
-            <input type="text" name="phone" class="input" required>
-            <label>Телефон*:</label>
-            <div class="form__input-status"></div>
-						<div class="message form__input-message">Это поле обязательно для заполнения, пример заполнения: +7 (922) 333-33-33</div>
-          </div>
-          <div class="form__input order-form__input">
-            <input type="text" name="email" class="input" required>
-            <label>E-mail*:</label>
-            <div class="form__input-status"></div>
-						<div class="message form__input-message">Это поле обязательно для заполнения, пример заполнения: ivan_ivanov@ex.ru</div>
-          </div>
-        </div>
-        <div class="form__textarea order-form__textarea form__input">
-          <textarea class="order-form__textarea" type="text" name="message" autocomplete="on" required></textarea>
-          <label for="email">Ваша компания, или комментарий по заказу*:</label>
-          <div class="form__input-status"></div>
-        </div>
-        <button type="submit" class="button order-form__submit">Отправить</button>
-        <p class="order-form__personal"><a class="order-form__personal-link" href="#">Нажимая на кнопку «Отправить», я даю согласие на обработку персональных данных</a></p>
-      </form>
+        <?$APPLICATION->IncludeComponent(
+            "vektorcmp:sale.vektor.basket",
+            ".default",
+            Array(
+                "HIDE_ON_BASKET_PAGES" => "Y",
+                "DETAIL_URL" => "/catalog/#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
+                "PATH_TO_BASKET" => SITE_DIR."basket/",
+                "SHOW_EMPTY_VALUES" => "Y",
+                "SHOW_NUM_PRODUCTS" => "Y",
+                "SHOW_PRODUCTS" => "N",
+                "SHOW_TOTAL_PRICE" => "Y"
+            )
+        );?>
+        <?$APPLICATION->IncludeComponent(
+	"bitrix:form", 
+	"calculate", 
+	array(
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"CHAIN_ITEM_LINK" => "",
+		"CHAIN_ITEM_TEXT" => "",
+		"EDIT_ADDITIONAL" => "N",
+		"EDIT_STATUS" => "Y",
+		"IGNORE_CUSTOM_TEMPLATE" => "N",
+		"NAME_TEMPLATE" => "",
+		"NOT_SHOW_FILTER" => array(
+			0 => "",
+			1 => "",
+		),
+		"NOT_SHOW_TABLE" => array(
+			0 => "",
+			1 => "",
+		),
+		"RESULT_ID" => $_REQUEST[RESULT_ID],
+		"SEF_MODE" => "N",
+		"SHOW_ADDITIONAL" => "N",
+		"SHOW_ANSWER_VALUE" => "N",
+		"SHOW_EDIT_PAGE" => "N",
+		"SHOW_LIST_PAGE" => "N",
+		"SHOW_STATUS" => "Y",
+		"SHOW_VIEW_PAGE" => "N",
+		"START_PAGE" => "new",
+		"SUCCESS_URL" => "",
+		"USE_EXTENDED_ERRORS" => "N",
+		"WEB_FORM_ID" => "4",
+		"COMPONENT_TEMPLATE" => "calculate",
+		"VARIABLE_ALIASES" => array(
+			"action" => "action",
+		)
+	),
+	false
+);?>
     </div>
   </div>
 

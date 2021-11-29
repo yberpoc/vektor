@@ -24,6 +24,7 @@
       <a href="+78001002489" class="footer__phone"><span>8 (800)</span> 100 24 89</a>
       <span class="footer__address">614038, Россия, Пермский край, г. Пермь, улица Академика Веденеева, 80а</span>
     </div>
+
     <div class="footer__col footer__col_menu">
         <?$APPLICATION->IncludeComponent(
             "bitrix:menu",
@@ -41,7 +42,6 @@
                 "USE_EXT" => "N"
             )
         );?>
-
       <ul class="footer-social">
         <li class="footer-social__item">
           <a href="" target="_blank" class="footer-social__link">
