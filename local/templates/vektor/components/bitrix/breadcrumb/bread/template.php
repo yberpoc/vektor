@@ -21,7 +21,7 @@ for($index = 0; $index < $itemSize; $index++)
 	$title = htmlspecialcharsex($arResult[$index]["TITLE"]);
 
 
-	if($arResult[$index]["LINK"] <> "" && $index != $itemSize-1 && $index == 0)
+	if($arResult[$index]["LINK"] <> "" && $index == 0)
 	{
 		$strReturn .= '
 			<li class="breadcrumbs__item" id="bx_breadcrumb_'.$index.'">
