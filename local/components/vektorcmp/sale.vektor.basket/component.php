@@ -47,7 +47,7 @@ while ($arItems = $dbBasketItems->Fetch()) {
     $res = CIBlockElement::GetList(
         array(),
         array(
-            'IBLOCK_ID' => 6,
+            'IBLOCK_ID' => 5,
             'ID' => $arItems['PRODUCT_ID'],
             'ACTIVE_DATE' => 'Y',
             'ACTIVE' => 'Y'
@@ -64,8 +64,10 @@ while ($arItems = $dbBasketItems->Fetch()) {
 
     while ($ob = $res->GetNextElement()) {
         $arFields = $ob->GetFields();
+
         if($arFields['PREVIEW_PICTURE']){
             $img = CFile::GetPath($arFields['PREVIEW_PICTURE']);
+
             $arFields['PREVIEW_PICTURE'] = $img;
         } else {
             $arFields['PREVIEW_PICTURE'] = '/local/components/vitacmp/vita.small.basket/images/no_photo.png';
