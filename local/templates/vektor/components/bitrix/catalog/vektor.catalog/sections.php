@@ -37,13 +37,16 @@ if ($sectionListParams["COUNT_ELEMENTS"] === "Y")
 		$sectionListParams["COUNT_ELEMENTS_FILTER"] = "CNT_AVAILABLE";
 	}
 }
-$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section.list",
-	"",
-	$sectionListParams,
-	$component,
-	($arParams["SHOW_TOP_ELEMENTS"] !== "N" ? array("HIDE_ICONS" => "Y") : array())
-);
+
+	$APPLICATION->IncludeComponent(
+		"bitrix:catalog.section.list",
+		"",
+		$sectionListParams,
+		$component,
+		($arParams["SHOW_TOP_ELEMENTS"] !== "N" ? array("HIDE_ICONS" => "Y") : array())
+	);
+
+
 unset($sectionListParams);
 
 if ($arParams["USE_COMPARE"] === "Y")
