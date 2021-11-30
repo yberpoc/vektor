@@ -1865,7 +1865,6 @@ $APPLICATION->SetTitle("ВЕКТОР-ПМ");?>
 
             <div class="popup popup_side" id="form-popup">
                 <div class="popup__close"></div>
-
                 <div class="popup__content">
 	                <?$APPLICATION->IncludeComponent(
 		                "bitrix:form",

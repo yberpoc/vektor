@@ -56,7 +56,7 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
                     false,
                     array(
                         'UF_SLIDER_IMAGE',
-                        'UF_SECTION_COLOR',
+                        'UF_SECTION_COLOR'
                     ),
                     false
             );
