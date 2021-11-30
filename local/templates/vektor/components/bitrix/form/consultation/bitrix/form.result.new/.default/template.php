@@ -16,6 +16,10 @@
                     </div>
                 <?endif;?>
 
+                <?if($arResult['isFormErrors'] == 'Y'):?>
+                    <p class="form-error">Пожалуйста, заполните все обязательные поля!</p>
+                <?endif;?>
+
                 <div class="form__inputs">
                     <?foreach ($arResult["QUESTIONS"] as $FIELD_SID => $arQuestion):?>
                         <?
@@ -74,6 +78,8 @@
                 </div>
             </fieldset>
         </form>
+    <?elseif($arResult['isFormNote'] == 'Y'):?>
+        <h2 class="form__title">Форма успешно отправлена!</h2>
     <?endif;?>
 </div>
 <!-- END FORM -->

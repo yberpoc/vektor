@@ -17,8 +17,7 @@ $strSectionDelete = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELET
 $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM'));
 
 ?>
-
-<?if(!empty($arResult['SECTIONS'])):?>
+<?if(count($arResult['SECTIONS']) > 0):?>
 	<div class="container">
 		<div class="inner-top">
 			<div class="inner__info">
@@ -51,7 +50,7 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
 			<img src="<?=$arResult['SECTION']['PICTURE']?>" alt="" class="inner__img">
 		</div>
 	</div>
-	<? if (0 < $arResult["SECTIONS_COUNT"]):?>
+
 		<div class="container inner <?$arResult['SECTION']['DEPTH_LEVEL'] == 1 ? 'inner_wide' : ''?>">
 			<!-- CONTENT -->
 			<div class="inner__content">
@@ -363,7 +362,6 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
 
 			</div>
 			<!-- /CONTENT -->
-
 			<?if($arResult['SECTION']['DEPTH_LEVEL'] == 2):?>
 				<aside class="inner__sidebar">
 					<div data-content="aside-slider">
@@ -438,5 +436,4 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
 				</aside>
 			<?endif;?>
 		</div>
-	<?endif;?>
 <?endif;?>
