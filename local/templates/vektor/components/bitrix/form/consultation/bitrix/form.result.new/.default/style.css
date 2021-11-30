@@ -1,4 +1,4 @@
-.form-required
-{
-	color: #111;
+.form-error{
+    margin-bottom: 10px;
+    color: #d30015;
 }

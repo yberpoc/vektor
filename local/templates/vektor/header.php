@@ -1226,7 +1226,7 @@
         <div class="container">
 			<h1><?=$APPLICATION->ShowTitle(true);?></h1>
 		</div>
-    <?elseif($APPLICATION->GetCurPage() != '/' && CSite::InDir('/products/')):?>
+    <?elseif($APPLICATION->GetCurPage() != '/' && (CSite::InDir('/products/') || CSite::InDir('/news/'))):?>
 
             <!-- BREADCRUMBS -->
             <?$APPLICATION->IncludeComponent(
