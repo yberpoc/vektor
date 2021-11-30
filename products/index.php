@@ -3,8 +3,14 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Продукция");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:catalog",
+<<<<<<< HEAD
+	".default",
+	"maria-catalog",
+	array(
+=======
 	"maria-catalog",
 	Array(
+>>>>>>> 840c2c85bc0d8f1db32d1e04081cab82ba9f2686
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_PICT_PROP" => "-",
@@ -204,6 +210,35 @@ $APPLICATION->SetTitle("Продукция");
 		"USE_REVIEW" => "N",
 		"USE_SALE_BESTSELLERS" => "N",
 		"USE_STORE" => "N",
+<<<<<<< HEAD
+		"COMPONENT_TEMPLATE" => ".default",
+		"TOP_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
+		"TOP_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
+		"TOP_ENLARGE_PRODUCT" => "STRICT",
+		"TOP_SHOW_SLIDER" => "Y",
+		"TOP_SLIDER_INTERVAL" => "3000",
+		"TOP_SLIDER_PROGRESS" => "N",
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
+		),
+		"COMPONENT_TEMPLATE" => "maria-catalog",
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
+		),
+		"SEF_URL_TEMPLATES" => array(
+			"sections" => "",
+			"section" => "#SECTION_CODE_PATH#/",
+			"element" => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
+			"compare" => "compare.php?action=#ACTION_CODE#",
+			"smart_filter" => "#SECTION_CODE_PATH#/filter/#SMART_FILTER_PATH#/apply/",
+		),
+		"VARIABLE_ALIASES" => array(
+			"compare" => array(
+				"ACTION_CODE" => "action",
+			),
+		)
+	),
+	false
+=======
 		"VARIABLE_ALIASES" => array("compare"=>array("ACTION_CODE"=>"action",),)
 	)
+>>>>>>> 840c2c85bc0d8f1db32d1e04081cab82ba9f2686
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
