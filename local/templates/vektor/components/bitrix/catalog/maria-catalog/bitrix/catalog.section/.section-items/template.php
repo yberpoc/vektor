@@ -156,6 +156,7 @@ $generalParams = array(
 $obName = 'ob'.preg_replace('/[^a-zA-Z0-9_]/', 'x', $this->GetEditAreaId($navParams['NavNum']));
 $containerName = 'container-'.$navParams['NavNum'];
 ?>
+
 <?if(count($arResult['ITEMS']) > 0):?>
     <div class="container">
         <div class="inner-top">

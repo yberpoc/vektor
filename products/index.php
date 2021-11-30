@@ -246,131 +246,71 @@ $APPLICATION->SetTitle("Продукция");
 			<h2>Акции и спецпредложения</h2>
 		</div>
 	</div>
-	<div class="tab-content">
-		<div class="tab-content__item tab-content__item_active">
-			<ul class="news__list">
-				<li class="news__item wow fadeInUp" data-wow-delay="0.2s" style="visibility: hidden;">
-					<div class="new">
-						<div class="new__image" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/new.jpg');">
-							<div class="new__image-substrate"></div>
-						</div>
-						<div class="new__body">
-							<span>12 мая 2019</span>
-							<p>Приглашение на выставку "Нефть и газ. Химия-2019"</p>
-							<a href="#">
-								<svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect y="9" width="24" height="2" fill="#025BFF" />
-									<path d="M14.5859 1.41421L16.0002 0L26.0001 10L23.2577 10L14.5859 1.41421Z" fill="#025BFF" />
-									<path d="M14.5859 18.5858L16.0002 20L26.0001 10L23.2577 9.99997L14.5859 18.5858Z"
-									      fill="#025BFF" />
-								</svg>
-							</a>
-						</div>
-					</div>
-				</li>
-				<li class="news__item wow fadeInUp" data-wow-delay="0.4s" style="visibility: hidden;">
-					<div class="new">
-						<div class="new__image" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/new.jpg');">
-							<div class="new__image-substrate"></div>
-						</div>
-						<div class="new__body">
-							<span>12 мая 2019</span>
-							<p>Приглашение на выставку "Нефть и газ. Химия-2019"</p>
-							<a href="#">
-								<svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect y="9" width="24" height="2" fill="#025BFF" />
-									<path d="M14.5859 1.41421L16.0002 0L26.0001 10L23.2577 10L14.5859 1.41421Z" fill="#025BFF" />
-									<path d="M14.5859 18.5858L16.0002 20L26.0001 10L23.2577 9.99997L14.5859 18.5858Z"
-									      fill="#025BFF" />
-								</svg>
-							</a>
-						</div>
-					</div>
-				</li>
-				<li class="news__item wow fadeInUp" data-wow-delay="0.6s" style="visibility: hidden;">
-					<div class="new">
-						<div class="new__image" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/new.jpg');">
-							<div class="new__image-substrate"></div>
-						</div>
-						<div class="new__body">
-							<span>12 мая 2019</span>
-							<p>Приглашение на выставку "Нефть и газ. Химия-2019"</p>
-							<a href="#">
-								<svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect y="9" width="24" height="2" fill="#025BFF" />
-									<path d="M14.5859 1.41421L16.0002 0L26.0001 10L23.2577 10L14.5859 1.41421Z" fill="#025BFF" />
-									<path d="M14.5859 18.5858L16.0002 20L26.0001 10L23.2577 9.99997L14.5859 18.5858Z"
-									      fill="#025BFF" />
-								</svg>
-							</a>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<div class="tab-content__item">
-			<ul class="news__list">
-				<li class="news__item">
-					<div class="new">
-						<div class="new__image" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/new.jpg');">
-							<div class="new__image-substrate"></div>
-						</div>
-						<div class="new__body">
-							<span>12 мая 2019</span>
-							<p>Приглашение на выставку "Нефть и газ. Химия-2019"</p>
-							<a href="#">
-								<svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect y="9" width="24" height="2" fill="#025BFF" />
-									<path d="M14.5859 1.41421L16.0002 0L26.0001 10L23.2577 10L14.5859 1.41421Z" fill="#025BFF" />
-									<path d="M14.5859 18.5858L16.0002 20L26.0001 10L23.2577 9.99997L14.5859 18.5858Z"
-									      fill="#025BFF" />
-								</svg>
-							</a>
-						</div>
-					</div>
-				</li>
-				<li class="news__item">
-					<div class="new">
-						<div class="new__image" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/new.jpg');">
-							<div class="new__image-substrate"></div>
-						</div>
-						<div class="new__body">
-							<span>12 мая 2019</span>
-							<p>Приглашение на выставку "Нефть и газ. Химия-2019"</p>
-							<a href="#">
-								<svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect y="9" width="24" height="2" fill="#025BFF" />
-									<path d="M14.5859 1.41421L16.0002 0L26.0001 10L23.2577 10L14.5859 1.41421Z" fill="#025BFF" />
-									<path d="M14.5859 18.5858L16.0002 20L26.0001 10L23.2577 9.99997L14.5859 18.5858Z"
-									      fill="#025BFF" />
-								</svg>
-							</a>
-						</div>
-					</div>
-				</li>
-				<li class="news__item">
-					<div class="new">
-						<div class="new__image" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/new.jpg');">
-							<div class="new__image-substrate"></div>
-						</div>
-						<div class="new__body">
-							<span>12 мая 2019</span>
-							<p>Приглашение на выставку "Нефть и газ. Химия-2019"</p>
-							<a href="#">
-								<svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<rect y="9" width="24" height="2" fill="#025BFF" />
-									<path d="M14.5859 1.41421L16.0002 0L26.0001 10L23.2577 10L14.5859 1.41421Z" fill="#025BFF" />
-									<path d="M14.5859 18.5858L16.0002 20L26.0001 10L23.2577 9.99997L14.5859 18.5858Z"
-									      fill="#025BFF" />
-								</svg>
-							</a>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<a href="#" class="button button_rounded button_white news__button">Все новости</a>
-	</div>
+	<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"index_news", 
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "6",
+		"IBLOCK_TYPE" => "-",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "3",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"COMPONENT_TEMPLATE" => "index_news"
+	),
+	false
+);?>
 </div>
 <!-- END NEWS -->
 
