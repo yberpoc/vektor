@@ -41,7 +41,6 @@
                 "USE_EXT" => "N"
             )
         );?>
-
       <ul class="footer-social">
         <li class="footer-social__item">
           <a href="" target="_blank" class="footer-social__link">
