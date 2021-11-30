@@ -1,22 +1,13 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Новости");
-<<<<<<< HEAD
 ?>
 <section class="news-page">
-    <div class="container">
-         <?$APPLICATION->IncludeComponent(
-	"bitrix:news", 
-	"news", 
-	array(
-=======
-?><section class="news-page">
 <div class="container">
 	 <?$APPLICATION->IncludeComponent(
 	"bitrix:news",
 	"news",
 	Array(
->>>>>>> 83207927e734c4483d7cb3cb02c968b8f3527c2e
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -84,16 +75,15 @@ $APPLICATION->SetTitle("Новости");
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
-<<<<<<< HEAD
 		"USE_SHARE" => "N",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
 			"detail" => "#ELEMENT_CODE#/",
-=======
 		"USE_SHARE" => "N"
 	)
-);?>
+)
+     );?>
 </div>
  </section>
 <section class="form__container form__container_gray">
@@ -138,12 +128,10 @@ $APPLICATION->SetTitle("Новости");
 		"COMPONENT_TEMPLATE" => "question_form",
 		"VARIABLE_ALIASES" => array(
 			"action" => "action",
->>>>>>> 83207927e734c4483d7cb3cb02c968b8f3527c2e
 		)
 	),
 	false
 );?>
-<<<<<<< HEAD
     <?$APPLICATION->IncludeComponent(
 	"bitrix:main.include",
 	".default",
@@ -204,8 +192,7 @@ $APPLICATION->SetTitle("Новости");
         false
     );?>
 </section>
-=======
+
     </div>
  </section>
->>>>>>> 83207927e734c4483d7cb3cb02c968b8f3527c2e
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
