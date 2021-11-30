@@ -45,7 +45,7 @@ while ($arItems = $dbBasketItems->Fetch()) {
         CSaleBasket::UpdatePrice($arItems["PRODUCT_ID"]);
         $arItems = CSaleBasket::GetByID($arItems["ID"]);
     }
-    $arFilter = array("IBLOCK_ID"=>6, "ID"=>$arItems['PRODUCT_ID'], "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y");
+    $arFilter = array("IBLOCK_ID"=>5, "ID"=>$arItems['PRODUCT_ID'], "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y");
     $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "PREVIEW_PICTURE", "PREVIEW_TEXT", "DETAIL_PAGE_URL");
     $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>50), $arSelect);
     while ($ob = $res->GetNextElement())
@@ -57,7 +57,6 @@ while ($arItems = $dbBasketItems->Fetch()) {
         $arFields["EL_BASKET_ID"] = $arItems["ID"];
         $arFields["QUANTITY"] = $arItems["QUANTITY"];
 
-<<<<<<< HEAD
         $arBasketProps[] = $arFields;
     }
     $arResultItems[] = $arItems;
@@ -85,6 +84,7 @@ switch ($_GET["method"]) {
 }
 // </добавление и удаление количества товаров в корзине>
 
+
 // <данные введённые пользователем>
 $person = $_REQUEST['person'];
 $company = $_REQUEST['company_name'];
@@ -99,6 +99,7 @@ $arResult = array(
     "ITEMS" => $arBasketProps,
     "ERROR" => "",
 );
+
 
 if ($USER->IsAuthorized()) {
     $userID = $USER->GetID();
@@ -128,35 +129,6 @@ function setOrder($userID, $person, $company, $phone, $email, $task, $comment, $
 
         if ($comment) {
             $order->setField('USER_DESCRIPTION', $comment); // Устанавливаем поля комментария покупателя
-=======
-    $res = CIBlockElement::GetList(
-        array(),
-        array(
-            'IBLOCK_ID' => 5,
-            'ID' => $arItems['PRODUCT_ID'],
-            'ACTIVE_DATE' => 'Y',
-            'ACTIVE' => 'Y'
-        ),
-        false,
-        false,
-        array(
-            'ID',
-            'NAME',
-            'PREVIEW_PICTURE',
-            'DETAIL_PAGE_URL'
-        )
-    );
-
-    while ($ob = $res->GetNextElement()) {
-        $arFields = $ob->GetFields();
-
-        if($arFields['PREVIEW_PICTURE']){
-            $img = CFile::GetPath($arFields['PREVIEW_PICTURE']);
-
-            $arFields['PREVIEW_PICTURE'] = $img;
-        } else {
-            $arFields['PREVIEW_PICTURE'] = '/local/components/vitacmp/vita.small.basket/images/no_photo.png';
->>>>>>> 840c2c85bc0d8f1db32d1e04081cab82ba9f2686
         }
 
         $propertyCollection = $order->getPropertyCollection();

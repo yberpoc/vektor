@@ -3,14 +3,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Продукция");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:catalog",
-<<<<<<< HEAD
 	".default",
 	"maria-catalog",
 	array(
-=======
-	"maria-catalog",
-	Array(
->>>>>>> 840c2c85bc0d8f1db32d1e04081cab82ba9f2686
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_PICT_PROP" => "-",
@@ -210,7 +205,6 @@ $APPLICATION->SetTitle("Продукция");
 		"USE_REVIEW" => "N",
 		"USE_SALE_BESTSELLERS" => "N",
 		"USE_STORE" => "N",
-<<<<<<< HEAD
 		"COMPONENT_TEMPLATE" => ".default",
 		"TOP_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
 		"TOP_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
@@ -237,8 +231,4 @@ $APPLICATION->SetTitle("Продукция");
 		)
 	),
 	false
-=======
-		"VARIABLE_ALIASES" => array("compare"=>array("ACTION_CODE"=>"action",),)
-	)
->>>>>>> 840c2c85bc0d8f1db32d1e04081cab82ba9f2686
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
