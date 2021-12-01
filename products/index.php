@@ -1,10 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Продукция");
-?><?$APPLICATION->IncludeComponent(
-	"bitrix:catalog",
-	".default",
-	"maria-catalog",
+?>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:catalog", 
+	"maria-catalog", 
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_ELEMENT_CHAIN" => "N",
@@ -26,24 +26,34 @@ $APPLICATION->SetTitle("Продукция");
 		"COMMON_SHOW_CLOSE_POPUP" => "Y",
 		"COMPARE_ELEMENT_SORT_FIELD" => "sort",
 		"COMPARE_ELEMENT_SORT_ORDER" => "asc",
-		"COMPARE_FIELD_CODE" => array("",""),
+		"COMPARE_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"COMPARE_NAME" => "CATALOG_COMPARE_LIST",
 		"COMPARE_POSITION_FIXED" => "N",
 		"COMPATIBLE_MODE" => "Y",
 		"CONVERT_CURRENCY" => "Y",
 		"CURRENCY_ID" => "RUB",
 		"DETAIL_ADD_DETAIL_TO_SLIDER" => "Y",
-		"DETAIL_ADD_TO_BASKET_ACTION" => array("ADD"),
-		"DETAIL_ADD_TO_BASKET_ACTION_PRIMARY" => array("ADD"),
+		"DETAIL_ADD_TO_BASKET_ACTION" => array(
+			0 => "ADD",
+		),
+		"DETAIL_ADD_TO_BASKET_ACTION_PRIMARY" => array(
+			0 => "ADD",
+		),
 		"DETAIL_BACKGROUND_IMAGE" => "-",
 		"DETAIL_BRAND_USE" => "N",
 		"DETAIL_BROWSER_TITLE" => "-",
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
-		"DETAIL_DETAIL_PICTURE_MODE" => array("POPUP"),
+		"DETAIL_DETAIL_PICTURE_MODE" => array(
+			0 => "POPUP",
+		),
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "S",
 		"DETAIL_IMAGE_RESOLUTION" => "16by9",
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(),
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
+		),
 		"DETAIL_META_DESCRIPTION" => "-",
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
@@ -65,12 +75,19 @@ $APPLICATION->SetTitle("Продукция");
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_ORDER2" => "desc",
-		"FILTER_FIELD_CODE" => array(0=>"",1=>"",),
+		"FILTER_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"FILTER_HIDE_ON_MOBILE" => "N",
 		"FILTER_NAME" => "",
-		"FILTER_PRICE_CODE" => "",
-		"FILTER_PROPERTY_CODE" => array(0=>"",1=>"",),
-		"FILTER_VIEW_MODE" => "VERTICAL",
+		"FILTER_PRICE_CODE" => array(
+		),
+		"FILTER_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_VIEW_MODE" => "HORIZONTAL",
 		"GIFTS_DETAIL_BLOCK_TITLE" => "Выберите один из подарков",
 		"GIFTS_DETAIL_HIDE_BLOCK_TITLE" => "N",
 		"GIFTS_DETAIL_PAGE_ELEMENT_COUNT" => "4",
@@ -93,7 +110,8 @@ $APPLICATION->SetTitle("Продукция");
 		"IBLOCK_TYPE" => "catalog",
 		"INCLUDE_SUBSECTIONS" => "N",
 		"INSTANT_RELOAD" => "N",
-		"LABEL_PROP" => array(),
+		"LABEL_PROP" => array(
+		),
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "3",
 		"LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
@@ -111,7 +129,7 @@ $APPLICATION->SetTitle("Продукция");
 		"LIST_SLIDER_PROGRESS" => "N",
 		"LOAD_ON_SCROLL" => "N",
 		"MESSAGE_404" => "",
-		"MESS_BTN_ADD_TO_BASKET" => "Запросить цену",
+		"MESS_BTN_ADD_TO_BASKET" => "Добавить в заказ",
 		"MESS_BTN_BUY" => "Купить",
 		"MESS_BTN_COMPARE" => "Сравнение",
 		"MESS_BTN_DETAIL" => "Подробнее",
@@ -131,7 +149,9 @@ $APPLICATION->SetTitle("Продукция");
 		"PAGER_TITLE" => "Товары",
 		"PAGE_ELEMENT_COUNT" => "9",
 		"PARTIAL_PRODUCT_PROPERTIES" => "Y",
-		"PRICE_CODE" => array("BASE"),
+		"PRICE_CODE" => array(
+			0 => "BASE",
+		),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"PRICE_VAT_SHOW_VALUE" => "N",
 		"PRODUCT_ID_VARIABLE" => "id",
@@ -154,7 +174,6 @@ $APPLICATION->SetTitle("Продукция");
 		"SECTION_TOP_DEPTH" => "1",
 		"SEF_FOLDER" => "/products/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => Array("compare"=>"compare.php?action=#ACTION_CODE#","element"=>"#SECTION_CODE_PATH#/#ELEMENT_CODE#/","section"=>"#SECTION_CODE_PATH#/","sections"=>"","smart_filter"=>"#SECTION_CODE_PATH#/filter/#SMART_FILTER_PATH#/apply/"),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "Y",
@@ -195,7 +214,7 @@ $APPLICATION->SetTitle("Продукция");
 		"USE_COMPARE" => "Y",
 		"USE_ELEMENT_COUNTER" => "Y",
 		"USE_ENHANCED_ECOMMERCE" => "N",
-		"USE_FILTER" => "N",
+		"USE_FILTER" => "Y",
 		"USE_GIFTS_DETAIL" => "N",
 		"USE_GIFTS_MAIN_PR_SECTION_LIST" => "N",
 		"USE_GIFTS_SECTION" => "N",
@@ -205,18 +224,7 @@ $APPLICATION->SetTitle("Продукция");
 		"USE_REVIEW" => "N",
 		"USE_SALE_BESTSELLERS" => "N",
 		"USE_STORE" => "N",
-		"COMPONENT_TEMPLATE" => ".default",
-		"TOP_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
-		"TOP_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
-		"TOP_ENLARGE_PRODUCT" => "STRICT",
-		"TOP_SHOW_SLIDER" => "Y",
-		"TOP_SLIDER_INTERVAL" => "3000",
-		"TOP_SLIDER_PROGRESS" => "N",
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
-		),
 		"COMPONENT_TEMPLATE" => "maria-catalog",
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
-		),
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",
@@ -231,4 +239,283 @@ $APPLICATION->SetTitle("Продукция");
 		)
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+
+    <!-- NEWS -->
+    <div class="news">
+        <div class="tab">
+            <div class="tab__item tab__item_active">
+                <h2>Новости</h2>
+            </div>
+            <button class="tab__button">
+                <div class="tab__switch"></div>
+            </button>
+            <div class="tab__item">
+                <h2>Акции и спецпредложения</h2>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div class="tab-content__item tab-content__item_active">
+                <ul class="news__list">
+                    <li class="news__item wow fadeInUp" data-wow-delay="0.2s" style="visibility: hidden;">
+                        <div class="new">
+                            <div class="new__image" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/new.jpg');">
+                                <div class="new__image-substrate"></div>
+                            </div>
+                            <div class="new__body">
+                                <span>12 мая 2019</span>
+                                <p>Приглашение на выставку "Нефть и газ. Химия-2019"</p>
+                                <a href="#">
+                                    <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="9" width="24" height="2" fill="#025BFF" />
+                                        <path d="M14.5859 1.41421L16.0002 0L26.0001 10L23.2577 10L14.5859 1.41421Z" fill="#025BFF" />
+                                        <path d="M14.5859 18.5858L16.0002 20L26.0001 10L23.2577 9.99997L14.5859 18.5858Z"
+                                              fill="#025BFF" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="news__item wow fadeInUp" data-wow-delay="0.4s" style="visibility: hidden;">
+                        <div class="new">
+                            <div class="new__image" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/new.jpg');">
+                                <div class="new__image-substrate"></div>
+                            </div>
+                            <div class="new__body">
+                                <span>12 мая 2019</span>
+                                <p>Приглашение на выставку "Нефть и газ. Химия-2019"</p>
+                                <a href="#">
+                                    <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="9" width="24" height="2" fill="#025BFF" />
+                                        <path d="M14.5859 1.41421L16.0002 0L26.0001 10L23.2577 10L14.5859 1.41421Z" fill="#025BFF" />
+                                        <path d="M14.5859 18.5858L16.0002 20L26.0001 10L23.2577 9.99997L14.5859 18.5858Z"
+                                              fill="#025BFF" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="news__item wow fadeInUp" data-wow-delay="0.6s" style="visibility: hidden;">
+                        <div class="new">
+                            <div class="new__image" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/new.jpg');">
+                                <div class="new__image-substrate"></div>
+                            </div>
+                            <div class="new__body">
+                                <span>12 мая 2019</span>
+                                <p>Приглашение на выставку "Нефть и газ. Химия-2019"</p>
+                                <a href="#">
+                                    <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="9" width="24" height="2" fill="#025BFF" />
+                                        <path d="M14.5859 1.41421L16.0002 0L26.0001 10L23.2577 10L14.5859 1.41421Z" fill="#025BFF" />
+                                        <path d="M14.5859 18.5858L16.0002 20L26.0001 10L23.2577 9.99997L14.5859 18.5858Z"
+                                              fill="#025BFF" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content__item">
+                <ul class="news__list">
+                    <li class="news__item">
+                        <div class="new">
+                            <div class="new__image" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/new.jpg');">
+                                <div class="new__image-substrate"></div>
+                            </div>
+                            <div class="new__body">
+                                <span>12 мая 2019</span>
+                                <p>Приглашение на выставку "Нефть и газ. Химия-2019"</p>
+                                <a href="#">
+                                    <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="9" width="24" height="2" fill="#025BFF" />
+                                        <path d="M14.5859 1.41421L16.0002 0L26.0001 10L23.2577 10L14.5859 1.41421Z" fill="#025BFF" />
+                                        <path d="M14.5859 18.5858L16.0002 20L26.0001 10L23.2577 9.99997L14.5859 18.5858Z"
+                                              fill="#025BFF" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="news__item">
+                        <div class="new">
+                            <div class="new__image" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/new.jpg');">
+                                <div class="new__image-substrate"></div>
+                            </div>
+                            <div class="new__body">
+                                <span>12 мая 2019</span>
+                                <p>Приглашение на выставку "Нефть и газ. Химия-2019"</p>
+                                <a href="#">
+                                    <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="9" width="24" height="2" fill="#025BFF" />
+                                        <path d="M14.5859 1.41421L16.0002 0L26.0001 10L23.2577 10L14.5859 1.41421Z" fill="#025BFF" />
+                                        <path d="M14.5859 18.5858L16.0002 20L26.0001 10L23.2577 9.99997L14.5859 18.5858Z"
+                                              fill="#025BFF" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="news__item">
+                        <div class="new">
+                            <div class="new__image" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/new.jpg');">
+                                <div class="new__image-substrate"></div>
+                            </div>
+                            <div class="new__body">
+                                <span>12 мая 2019</span>
+                                <p>Приглашение на выставку "Нефть и газ. Химия-2019"</p>
+                                <a href="#">
+                                    <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="9" width="24" height="2" fill="#025BFF" />
+                                        <path d="M14.5859 1.41421L16.0002 0L26.0001 10L23.2577 10L14.5859 1.41421Z" fill="#025BFF" />
+                                        <path d="M14.5859 18.5858L16.0002 20L26.0001 10L23.2577 9.99997L14.5859 18.5858Z"
+                                              fill="#025BFF" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <a href="#" class="button button_rounded button_white news__button">Все новости</a>
+        </div>
+    </div>
+    <!-- END NEWS -->
+
+    <!-- SOLUTIONS -->
+    <section class="solutions section_solutions">
+        <div class="container solutions__container">
+            <div class="solutions__top">
+                <div class="solutions__title">
+                    Подберите решение для вашего бизнеса!
+                </div>
+                <div class="solutions__desc">
+                    Здесь вы найдете материалы о том, как применяются наши весы в разных отраслей.
+                    Можете подобрать готовые комплекты для решения задач своего бизнеса.
+                    <b>17 лет опыта и практики</b>
+                </div>
+                <a href="" class="solutions__button button button_rounded">
+                    Все решения
+                </a>
+            </div>
+            <div class="solutions__cards">
+                <a href="" class="solutions__card">
+                    <div class="solutions__card-image" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/catalog/solutions_1.png)"></div>
+                    <span class="solutions__card-name">Мясная промышленность</span>
+                    <span class="solutions__card-dark"></span>
+                </a>
+                <a href="" class="solutions__card">
+                    <div class="solutions__card-image" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/catalog/solutions_2.png)"></div>
+                    <span class="solutions__card-name">Железнодорожные терминалы</span>
+                    <span class="solutions__card-dark"></span>
+                </a>
+                <a href="" class="solutions__card">
+                    <div class="solutions__card-image" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/catalog/solutions_3.png)"></div>
+                    <span class="solutions__card-name">Дорожный контроль</span>
+                    <span class="solutions__card-dark"></span>
+                </a>
+                <a href="" class="solutions__card">
+                    <div class="solutions__card-image" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/catalog/solutions_4.png)"></div>
+                    <span class="solutions__card-name">Сельское хозяйство</span>
+                    <span class="solutions__card-dark"></span>
+                </a>
+            </div>
+        </div>
+        <div class="solutions__back-text back-text container">
+            <span class="solutions__bright-word">Опыт.</span> Репутация. Надежность
+        </div>
+        <span class="solutions__big-letter">
+			О
+		</span>
+    </section>
+    <!-- END SOLUTIONS -->
+
+    <!-- OUR PRODUCTION -->
+    <section class="our-production">
+        <div class="our-production__container">
+            <div class="our-production__content">
+                <h2 class="our-production__title">Нашу продукцию используют</h2>
+                <p class="our-production__desc">более 8000 компаний в России, Белоруссии, Казахстане, Узбекистане, Украине, а
+                    также Европе используют продукцию Вектор-ПМ</p>
+                <div class="our-production-pagination"></div>
+                <div class="our-production-nav">
+                    <button class="our-production-nav__prev our-production-nav__button">
+                        <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.28625 15.0523C9.67965 15.4409 9.68159 16.0754 9.29058 16.4664C8.90125 16.8558 8.27002 16.8558 7.88069 16.4664L-0.000122821 8.5856L7.88069 0.704845C8.27002 0.315519 8.90125 0.315519 9.29057 0.704847C9.68159 1.09586 9.67965 1.73042 9.28624 2.11904L3.7523 7.5856L21 7.5856C21.5523 7.5856 22 8.03331 22 8.5856C22 9.13788 21.5523 9.5856 21 9.5856L3.7523 9.5856L9.28625 15.0523Z"
+                                fill="#025BFF" />
+                        </svg>
+                    </button>
+                    <button class="our-production-nav__next our-production-nav__button">
+                        <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.28625 15.0523C9.67965 15.4409 9.68159 16.0754 9.29058 16.4664C8.90125 16.8558 8.27002 16.8558 7.88069 16.4664L-0.000122821 8.5856L7.88069 0.704845C8.27002 0.315519 8.90125 0.315519 9.29057 0.704847C9.68159 1.09586 9.67965 1.73042 9.28624 2.11904L3.7523 7.5856L21 7.5856C21.5523 7.5856 22 8.03331 22 8.5856C22 9.13788 21.5523 9.5856 21 9.5856L3.7523 9.5856L9.28625 15.0523Z"
+                                fill="#025BFF" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="our-production__slider swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide our-production-item">
+                        <a href="" class="our-production-item__link">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/img/clients-1.png" alt="" class="our-production-item__img">
+                        </a>
+                    </div>
+                    <div class="swiper-slide our-production-item">
+                        <a href="" class="our-production-item__link">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/img/clients-1.png" alt="" class="our-production-item__img">
+                        </a>
+                    </div>
+                    <div class="swiper-slide our-production-item">
+                        <a href="" class="our-production-item__link">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/img/clients-1.png" alt="" class="our-production-item__img">
+                        </a>
+                    </div>
+                    <div class="swiper-slide our-production-item">
+                        <a href="" class="our-production-item__link">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/img/clients-1.png" alt="" class="our-production-item__img">
+                        </a>
+                    </div>
+                    <div class="swiper-slide our-production-item">
+                        <a href="" class="our-production-item__link">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/img/clients-1.png" alt="" class="our-production-item__img">
+                        </a>
+                    </div>
+                    <div class="swiper-slide our-production-item">
+                        <a href="" class="our-production-item__link">
+                            <img src="<?=SITE_TEMPLATE_PATH?>/img/clients-1.png" alt="" class="our-production-item__img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END OUR PRODUCTION -->
+
+    <!-- .video-block -->
+    <section class="section video-block">
+        <div class="video-block__preview">
+            <div class="video-block__bg" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/video-block-bg.png');"></div>
+            <div class="video-block__info">
+                <div class="video-block__mini-title">Посмотреть видео</div>
+                <h4 class="video-block__title">
+                    сделано в Перми <b>«Вектор-ПМ»</b>
+                </h4>
+            </div>
+
+            <div class="video-block__icon-wrap">
+                <svg class="video-block__icon" width="80" height="101" viewBox="0 0 80 101" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L78.3809 50.4048L1 99.8095V1Z" stroke="white" stroke-opacity="0.35" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+
+            <div class="video-block__line"></div>
+        </div>
+        <div class="video-block__player youtube-video" data-video-id="M7lc1UVf-VE" id="player1"></div>
+    </section>
+    <!-- /.video-block -->
+
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
