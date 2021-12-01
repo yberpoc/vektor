@@ -26,24 +26,34 @@ $APPLICATION->SetTitle("Продукция");
 		"COMMON_SHOW_CLOSE_POPUP" => "Y",
 		"COMPARE_ELEMENT_SORT_FIELD" => "sort",
 		"COMPARE_ELEMENT_SORT_ORDER" => "asc",
-		"COMPARE_FIELD_CODE" => array("",""),
+		"COMPARE_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"COMPARE_NAME" => "CATALOG_COMPARE_LIST",
 		"COMPARE_POSITION_FIXED" => "N",
 		"COMPATIBLE_MODE" => "Y",
 		"CONVERT_CURRENCY" => "Y",
 		"CURRENCY_ID" => "RUB",
 		"DETAIL_ADD_DETAIL_TO_SLIDER" => "Y",
-		"DETAIL_ADD_TO_BASKET_ACTION" => array("ADD"),
-		"DETAIL_ADD_TO_BASKET_ACTION_PRIMARY" => array("ADD"),
+		"DETAIL_ADD_TO_BASKET_ACTION" => array(
+			0 => "ADD",
+		),
+		"DETAIL_ADD_TO_BASKET_ACTION_PRIMARY" => array(
+			0 => "ADD",
+		),
 		"DETAIL_BACKGROUND_IMAGE" => "-",
 		"DETAIL_BRAND_USE" => "N",
 		"DETAIL_BROWSER_TITLE" => "-",
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
-		"DETAIL_DETAIL_PICTURE_MODE" => array("POPUP"),
+		"DETAIL_DETAIL_PICTURE_MODE" => array(
+			0 => "POPUP",
+		),
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "S",
 		"DETAIL_IMAGE_RESOLUTION" => "16by9",
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(),
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
+		),
 		"DETAIL_META_DESCRIPTION" => "-",
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
@@ -65,12 +75,19 @@ $APPLICATION->SetTitle("Продукция");
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_ORDER2" => "desc",
-		"FILTER_FIELD_CODE" => array(0=>"",1=>"",),
+		"FILTER_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"FILTER_HIDE_ON_MOBILE" => "N",
 		"FILTER_NAME" => "",
-		"FILTER_PRICE_CODE" => "",
-		"FILTER_PROPERTY_CODE" => array(0=>"",1=>"",),
-		"FILTER_VIEW_MODE" => "VERTICAL",
+		"FILTER_PRICE_CODE" => array(
+		),
+		"FILTER_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_VIEW_MODE" => "HORIZONTAL",
 		"GIFTS_DETAIL_BLOCK_TITLE" => "Выберите один из подарков",
 		"GIFTS_DETAIL_HIDE_BLOCK_TITLE" => "N",
 		"GIFTS_DETAIL_PAGE_ELEMENT_COUNT" => "4",
@@ -93,7 +110,8 @@ $APPLICATION->SetTitle("Продукция");
 		"IBLOCK_TYPE" => "catalog",
 		"INCLUDE_SUBSECTIONS" => "N",
 		"INSTANT_RELOAD" => "N",
-		"LABEL_PROP" => array(),
+		"LABEL_PROP" => array(
+		),
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "3",
 		"LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
@@ -111,7 +129,7 @@ $APPLICATION->SetTitle("Продукция");
 		"LIST_SLIDER_PROGRESS" => "N",
 		"LOAD_ON_SCROLL" => "N",
 		"MESSAGE_404" => "",
-		"MESS_BTN_ADD_TO_BASKET" => "Запросить цену",
+		"MESS_BTN_ADD_TO_BASKET" => "Добавить в заказ",
 		"MESS_BTN_BUY" => "Купить",
 		"MESS_BTN_COMPARE" => "Сравнение",
 		"MESS_BTN_DETAIL" => "Подробнее",
@@ -131,7 +149,9 @@ $APPLICATION->SetTitle("Продукция");
 		"PAGER_TITLE" => "Товары",
 		"PAGE_ELEMENT_COUNT" => "9",
 		"PARTIAL_PRODUCT_PROPERTIES" => "Y",
-		"PRICE_CODE" => array("BASE"),
+		"PRICE_CODE" => array(
+			0 => "BASE",
+		),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"PRICE_VAT_SHOW_VALUE" => "N",
 		"PRODUCT_ID_VARIABLE" => "id",
@@ -154,7 +174,6 @@ $APPLICATION->SetTitle("Продукция");
 		"SECTION_TOP_DEPTH" => "1",
 		"SEF_FOLDER" => "/products/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => Array("compare"=>"compare.php?action=#ACTION_CODE#","element"=>"#SECTION_CODE_PATH#/#ELEMENT_CODE#/","section"=>"#SECTION_CODE_PATH#/","sections"=>"","smart_filter"=>"#SECTION_CODE_PATH#/filter/#SMART_FILTER_PATH#/apply/"),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
 		"SET_TITLE" => "Y",
@@ -195,7 +214,7 @@ $APPLICATION->SetTitle("Продукция");
 		"USE_COMPARE" => "Y",
 		"USE_ELEMENT_COUNTER" => "Y",
 		"USE_ENHANCED_ECOMMERCE" => "N",
-		"USE_FILTER" => "N",
+		"USE_FILTER" => "Y",
 		"USE_GIFTS_DETAIL" => "N",
 		"USE_GIFTS_MAIN_PR_SECTION_LIST" => "N",
 		"USE_GIFTS_SECTION" => "N",
@@ -205,18 +224,7 @@ $APPLICATION->SetTitle("Продукция");
 		"USE_REVIEW" => "N",
 		"USE_SALE_BESTSELLERS" => "N",
 		"USE_STORE" => "N",
-		"COMPONENT_TEMPLATE" => ".default",
-		"TOP_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
-		"TOP_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
-		"TOP_ENLARGE_PRODUCT" => "STRICT",
-		"TOP_SHOW_SLIDER" => "Y",
-		"TOP_SLIDER_INTERVAL" => "3000",
-		"TOP_SLIDER_PROGRESS" => "N",
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
-		),
 		"COMPONENT_TEMPLATE" => "maria-catalog",
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
-		),
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",
@@ -232,7 +240,6 @@ $APPLICATION->SetTitle("Продукция");
 	),
 	false
 );?>
-
 <!-- NEWS -->
 <div class="news">
 	<div class="tab">
