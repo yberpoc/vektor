@@ -10,6 +10,50 @@ CModule::IncludeModule("sale");
 CModule::IncludeModule("catalog");
 CModule::IncludeModule("iblock");
 
+
+$arBasket = array();
+$products_in_cart = CSaleBasket::GetList(
+    array(), // сортировка
+    array(
+        'FUSER_ID' => CSaleBasket::GetBasketUserID(),
+        'LID' => SITE_ID,
+        'ORDER_ID' => NULL
+    ),
+    false, // группировать
+    false, // постраничная навигация
+    array(
+        "ID",
+        "NAME",
+        "CALLBACK_FUNC",
+        "MODULE",
+        "PRODUCT_ID",
+        "QUANTITY",
+        "DELAY",
+        "CAN_BUY",
+        "PRICE",
+        "ORDER_PRICE",
+        "BASE_PRICE",
+        "WEIGHT"
+    )
+);
+while ($product = $products_in_cart->Fetch()) {
+    $arFilter = array("IBLOCK_ID"=>5, "ID"=>$product['PRODUCT_ID'], "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y");
+    $arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "PREVIEW_PICTURE", "PREVIEW_TEXT", "DETAIL_PAGE_URL");
+    $res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>50), $arSelect);
+    while ($ob = $res->GetNextElement())
+    {
+        $arFields = $ob->GetFields();
+        $img = CFile::GetPath($arFields["PREVIEW_PICTURE"]);
+        $arFields["PREVIEW_PICTURE"] = $img;
+        $arFields["PRICE"] = $product["PRICE"];
+        $arFields["EL_BASKET_ID"] = $product["ID"];
+        $arFields["QUANTITY"] = $product["QUANTITY"];
+
+        $arBasket[] = $arFields;
+    }
+    $arResultItems[] = $product;
+}
+
 // <получение данных корзины со свойствами товаров из инфоблока>
 $arBasketProps = array();
 $dbBasketItems = CSaleBasket::GetList(
@@ -61,28 +105,27 @@ while ($arItems = $dbBasketItems->Fetch()) {
     }
     $arResultItems[] = $arItems;
 }
-// </получение данных корзины со свойствами товаров из инфоблока>
+echo '<pre>';
+print_r($_REQUEST["ID"]);
+echo '</pre>';
 
-// <добавление и удаление количества товаров в корзине>
 $count = $_REQUEST["quantity"];
 $ID = $_REQUEST["ID"];
-switch ($_GET["method"]) {
-    case 'addQuantity':
-        $arFields = array("QUANTITY" => ++$count);
-        CSaleBasket::Update($ID, $arFields);
-        header('Location: /basket/index.php');
-        break;
-    case 'delQuantity':
-        $arFields = array("QUANTITY" => --$count);
-        CSaleBasket::Update($ID, $arFields);
-        header('Location: /basket/index.php');
-        break;
-    case 'deleteProduct':
-        CSaleBasket::Delete($ID);
-        header('Location: /basket/index.php');
-        break;
+if ($_GET["method"] == 'addQuantity') {
+    $arFields = array("QUANTITY" => ++$count);
+    CSaleBasket::Update($ID, $arFields);
+    header('Location: index.php');
 }
-// </добавление и удаление количества товаров в корзине>
+if ($_GET["method"] == 'deleteQuantity') {
+    $arFields = array("QUANTITY" => --$count);
+    CSaleBasket::Update($ID, $arFields);
+    header('Location: index.php');
+}
+if ($_GET["method"] == 'delete') {
+    CSaleBasket::Delete($ID);
+    header('Location: index.php');
+}
+
 
 
 // <данные введённые пользователем>
@@ -90,13 +133,12 @@ $person = $_REQUEST['person'];
 $company = $_REQUEST['company_name'];
 $phone = $_REQUEST['phone'];
 $email = $_REQUEST['email'];
-$task = $_REQUEST['tech_task'];
-$comment = $_REQUEST['comment'];
-$agreement = $_REQUEST['agreement'];
 // </данные введённые пользователем>
 
+
+
 $arResult = array(
-    "ITEMS" => $arBasketProps,
+    "ITEMS" => $arBasket,
     "ERROR" => "",
 );
 
@@ -112,26 +154,24 @@ if ($USER->IsAuthorized()) {
     }
 }
 if (isset($userID)) {
-    setOrder($userID, $person, $company, $phone, $email, $task, $comment, $agreement); // отправка заказа
+    setOrder($userID, $person, $company, $phone, $email); // отправка заказа
 } else {
     echo 'ошибка';
 }
 
 // <функция для отправки заказа>
-function setOrder($userID, $person, $company, $phone, $email, $task, $comment, $agreement){
+function setOrder($userID, $person, $company, $phone, $email){
     if (isset($person) && isset($company) && isset($email)){
         $order = Order::create(SITE_ID, $userID);
         $order->setPersonTypeId(2);
+        header('Location: /basket/index.php');
 
         // Создаёт корзину с товаром
         $basket = Bitrix\Sale\Basket::loadItemsForFUser(Bitrix\Sale\Fuser::getId(), Bitrix\Main\Context::getCurrent()->getSite());
         $order->setBasket($basket);
 
-        if ($comment) {
-            $order->setField('USER_DESCRIPTION', $comment); // Устанавливаем поля комментария покупателя
-        }
-
         $propertyCollection = $order->getPropertyCollection();
+        header('Location: /basket/index.php');
 
         $propertyCollection->getItemByOrderPropertyId(12)->setValue($person);
         $propertyCollection->getItemByOrderPropertyId(13)->setValue($email);
@@ -142,7 +182,7 @@ function setOrder($userID, $person, $company, $phone, $email, $task, $comment, $
         $order->doFinalAction(true);
         $result = $order->save();
         $orderId = $order->getId();
-        header('Location: /basket/successful.php');
+        header('Location: /basket/index.php');
     }
 }
 // </функция для отправки заказа>

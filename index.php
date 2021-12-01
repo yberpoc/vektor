@@ -1868,7 +1868,7 @@ $APPLICATION->SetTitle("ВЕКТОР-ПМ");?>
                 <div class="popup__content">
                     <?$APPLICATION->IncludeComponent(
                         "bitrix:form",
-                        "vektor.form",
+                        "vektor.form.main",
                         array(
                             "AJAX_MODE" => "N",
                             "AJAX_OPTION_ADDITIONAL" => "",
@@ -1915,6 +1915,7 @@ $APPLICATION->SetTitle("ВЕКТОР-ПМ");?>
                         false
                     );?>
                 </div>
+                <!--ФОРМА-->
             </div>
         </section>
         <!-- END REVIEWS -->
