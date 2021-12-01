@@ -3,14 +3,14 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Новости");
 ?>
 <?if($APPLICATION->GetCurPage() == '/news/'):?>
-<div class="container">
-    <h1 class="inner__title"><?$APPLICATION->ShowTitle(true)?></h1>
-</div>
+    <div class="container">
+        <h1 class="inner__title"><?$APPLICATION->ShowTitle(true)?></h1>
+    </div>
 <?endif;?>
 
-<section class="news-page">
-    <div class="container">
-         <?$APPLICATION->IncludeComponent(
+    <section class="news-page">
+        <div class="container">
+            <?$APPLICATION->IncludeComponent(
                 "bitrix:news",
                 "news",
                 array(
@@ -86,119 +86,119 @@ $APPLICATION->SetTitle("Новости");
                         "news" => "",
                         "section" => "",
                         "detail" => "#ELEMENT_CODE#/",
+                    )
                 )
-            )
-         );?>
-    </div>
-</section>
+            );?>
+        </div>
+    </section>
 <?if($APPLICATION->GetCurPage() == '/news/'):?>
     <section class="get-price">
-		<?$APPLICATION->IncludeComponent(
-			"bitrix:form",
-			"consultation",
-			Array(
-				"AJAX_MODE" => "N",	// Включить режим AJAX
-				"AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
-				"AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
-				"AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
-				"AJAX_OPTION_STYLE" => "N",	// Включить подгрузку стилей
-				"CACHE_TIME" => "3600",	// Время кеширования (сек.)
-				"CACHE_TYPE" => "A",	// Тип кеширования
-				"CHAIN_ITEM_LINK" => "",	// Ссылка на дополнительном пункте в навигационной цепочке
-				"CHAIN_ITEM_TEXT" => "",	// Название дополнительного пункта в навигационной цепочке
-				"EDIT_ADDITIONAL" => "N",	// Выводить на редактирование дополнительные поля
-				"EDIT_STATUS" => "N",	// Выводить форму смены статуса
-				"IGNORE_CUSTOM_TEMPLATE" => "N",	// Игнорировать свой шаблон
-				"NAME_TEMPLATE" => "",
-				"NOT_SHOW_FILTER" => array(	// Коды полей, которые нельзя показывать в фильтре
-					0 => "",
-					1 => "",
-				),
-				"NOT_SHOW_TABLE" => array(	// Коды полей, которые нельзя показывать в таблице
-					0 => "",
-					1 => "",
-				),
-				"RESULT_ID" => $_REQUEST[RESULT_ID],	// ID результата
-				"SEF_MODE" => "N",	// Включить поддержку ЧПУ
-				"SHOW_ADDITIONAL" => "N",	// Показать дополнительные поля веб-формы
-				"SHOW_ANSWER_VALUE" => "N",	// Показать значение параметра ANSWER_VALUE
-				"SHOW_EDIT_PAGE" => "N",	// Показывать страницу редактирования результата
-				"SHOW_LIST_PAGE" => "N",	// Показывать страницу со списком результатов
-				"SHOW_STATUS" => "N",	// Показать текущий статус результата
-				"SHOW_VIEW_PAGE" => "N",	// Показывать страницу просмотра результата
-				"START_PAGE" => "new",	// Начальная страница
-				"SUCCESS_URL" => "",	// Страница с сообщением об успешной отправке
-				"USE_EXTENDED_ERRORS" => "Y",	// Использовать расширенный вывод сообщений об ошибках
-				"VARIABLE_ALIASES" => array(
-					"action" => "action",
-				),
-				"WEB_FORM_ID" => "1",	// ID веб-формы
-			),
-			false
-		);?>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:form",
+            "consultation",
+            Array(
+                "AJAX_MODE" => "N",	// Включить режим AJAX
+                "AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
+                "AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
+                "AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
+                "AJAX_OPTION_STYLE" => "N",	// Включить подгрузку стилей
+                "CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                "CACHE_TYPE" => "A",	// Тип кеширования
+                "CHAIN_ITEM_LINK" => "",	// Ссылка на дополнительном пункте в навигационной цепочке
+                "CHAIN_ITEM_TEXT" => "",	// Название дополнительного пункта в навигационной цепочке
+                "EDIT_ADDITIONAL" => "N",	// Выводить на редактирование дополнительные поля
+                "EDIT_STATUS" => "N",	// Выводить форму смены статуса
+                "IGNORE_CUSTOM_TEMPLATE" => "N",	// Игнорировать свой шаблон
+                "NAME_TEMPLATE" => "",
+                "NOT_SHOW_FILTER" => array(	// Коды полей, которые нельзя показывать в фильтре
+                    0 => "",
+                    1 => "",
+                ),
+                "NOT_SHOW_TABLE" => array(	// Коды полей, которые нельзя показывать в таблице
+                    0 => "",
+                    1 => "",
+                ),
+                "RESULT_ID" => $_REQUEST[RESULT_ID],	// ID результата
+                "SEF_MODE" => "N",	// Включить поддержку ЧПУ
+                "SHOW_ADDITIONAL" => "N",	// Показать дополнительные поля веб-формы
+                "SHOW_ANSWER_VALUE" => "N",	// Показать значение параметра ANSWER_VALUE
+                "SHOW_EDIT_PAGE" => "N",	// Показывать страницу редактирования результата
+                "SHOW_LIST_PAGE" => "N",	// Показывать страницу со списком результатов
+                "SHOW_STATUS" => "N",	// Показать текущий статус результата
+                "SHOW_VIEW_PAGE" => "N",	// Показывать страницу просмотра результата
+                "START_PAGE" => "new",	// Начальная страница
+                "SUCCESS_URL" => "",	// Страница с сообщением об успешной отправке
+                "USE_EXTENDED_ERRORS" => "Y",	// Использовать расширенный вывод сообщений об ошибках
+                "VARIABLE_ALIASES" => array(
+                    "action" => "action",
+                ),
+                "WEB_FORM_ID" => "1",	// ID веб-формы
+            ),
+            false
+        );?>
     </section>
-	<?$APPLICATION->IncludeComponent(
-		"bitrix:main.include",
-		".default",
-		Array(
-			"AREA_FILE_RECURSIVE" => "Y",
-			"AREA_FILE_SHOW" => "file",
-			"AREA_FILE_SUFFIX" => "inc",
-			"COMPONENT_TEMPLATE" => ".default",
-			"EDIT_TEMPLATE" => "",
-			"PATH" => "/include/news_back-text.php"
-		)
-	);?>
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:main.include",
+        ".default",
+        Array(
+            "AREA_FILE_RECURSIVE" => "Y",
+            "AREA_FILE_SHOW" => "file",
+            "AREA_FILE_SUFFIX" => "inc",
+            "COMPONENT_TEMPLATE" => ".default",
+            "EDIT_TEMPLATE" => "",
+            "PATH" => "/include/news_back-text.php"
+        )
+    );?>
 <?else:?>
 
-<section class="form__container form__container_gray">
-    <div class="container">
-        <?$APPLICATION->IncludeComponent(
-	"bitrix:form", 
-	"question_form", 
-	array(
-		"AJAX_MODE" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"CACHE_TIME" => "3600",
-		"CACHE_TYPE" => "A",
-		"CHAIN_ITEM_LINK" => "",
-		"CHAIN_ITEM_TEXT" => "",
-		"EDIT_ADDITIONAL" => "N",
-		"EDIT_STATUS" => "N",
-		"IGNORE_CUSTOM_TEMPLATE" => "N",
-		"NAME_TEMPLATE" => "",
-		"NOT_SHOW_FILTER" => array(
-			0 => "",
-			1 => "",
-		),
-		"NOT_SHOW_TABLE" => array(
-			0 => "",
-			1 => "",
-		),
-		"RESULT_ID" => $_REQUEST[RESULT_ID],
-		"SEF_MODE" => "N",
-		"SHOW_ADDITIONAL" => "N",
-		"SHOW_ANSWER_VALUE" => "N",
-		"SHOW_EDIT_PAGE" => "N",
-		"SHOW_LIST_PAGE" => "N",
-		"SHOW_STATUS" => "N",
-		"SHOW_VIEW_PAGE" => "N",
-		"START_PAGE" => "new",
-		"SUCCESS_URL" => "",
-		"USE_EXTENDED_ERRORS" => "N",
-		"WEB_FORM_ID" => "3",
-		"COMPONENT_TEMPLATE" => "question_form",
-		"VARIABLE_ALIASES" => array(
-			"action" => "action",
-		)
-	),
-	false
-);?>
-    </div>
-</section>
+    <section class="form__container form__container_gray">
+        <div class="container">
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:form",
+                "question_form",
+                array(
+                    "AJAX_MODE" => "N",
+                    "AJAX_OPTION_ADDITIONAL" => "",
+                    "AJAX_OPTION_HISTORY" => "N",
+                    "AJAX_OPTION_JUMP" => "N",
+                    "AJAX_OPTION_STYLE" => "Y",
+                    "CACHE_TIME" => "3600",
+                    "CACHE_TYPE" => "A",
+                    "CHAIN_ITEM_LINK" => "",
+                    "CHAIN_ITEM_TEXT" => "",
+                    "EDIT_ADDITIONAL" => "N",
+                    "EDIT_STATUS" => "N",
+                    "IGNORE_CUSTOM_TEMPLATE" => "N",
+                    "NAME_TEMPLATE" => "",
+                    "NOT_SHOW_FILTER" => array(
+                        0 => "",
+                        1 => "",
+                    ),
+                    "NOT_SHOW_TABLE" => array(
+                        0 => "",
+                        1 => "",
+                    ),
+                    "RESULT_ID" => $_REQUEST[RESULT_ID],
+                    "SEF_MODE" => "N",
+                    "SHOW_ADDITIONAL" => "N",
+                    "SHOW_ANSWER_VALUE" => "N",
+                    "SHOW_EDIT_PAGE" => "N",
+                    "SHOW_LIST_PAGE" => "N",
+                    "SHOW_STATUS" => "N",
+                    "SHOW_VIEW_PAGE" => "N",
+                    "START_PAGE" => "new",
+                    "SUCCESS_URL" => "",
+                    "USE_EXTENDED_ERRORS" => "N",
+                    "WEB_FORM_ID" => "3",
+                    "COMPONENT_TEMPLATE" => "question_form",
+                    "VARIABLE_ALIASES" => array(
+                        "action" => "action",
+                    )
+                ),
+                false
+            );?>
+        </div>
+    </section>
 <?endif;?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

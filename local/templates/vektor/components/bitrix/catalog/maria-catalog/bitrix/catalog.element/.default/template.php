@@ -1,4 +1,5 @@
 <?php
+
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
 use Bitrix\Main\Localization\Loc;
@@ -176,7 +177,7 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 ?>
 <section class="product-card" id="<?=$itemIds['ID']?>">
 
-    <?//echo '<pre>'; print_r($arResult["PROPERTIES"]["DETAIL_ICONS"]); echo '</pre>';?>
+    <?//echo '<pre>'; print_r($arResult["PROPERTIES"]); echo '</pre>';?>
 
     <div class="product-card__top container">
         <div class="product-card__left">
@@ -191,7 +192,7 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
                     <?foreach ($arResult["PROPERTIES"]["DETAIL_SMALL_IMG"]["VALUE"] as $arProps):?>
                         <?$smallImgPath = CFile::GetPath($arProps);?>
                         <div class="swiper-slide product-card-thumbs__item" style="background-image: url(<?=$smallImgPath?>);"></div>
-<!--                    <div class="swiper-slide product-card-thumbs__item product-card-thumbs__item_video" style="background-image: url(./img/thumb-3.jpg);"></div>-->
+                        <!--                    <div class="swiper-slide product-card-thumbs__item product-card-thumbs__item_video" style="background-image: url(./img/thumb-3.jpg);"></div>-->
                     <?endforeach?>
                 </div>
                 <button class="product-card-thumbs__arrow product-card-thumbs__prev">
@@ -225,7 +226,7 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
                             <div class="product-card-slider__img" style="background-image: url(<?=$bigImgPath?>);"></div>
 
                         </div>
-                        <?endforeach;?>
+                    <?endforeach;?>
                 </div>
             </div>
             <a href="" download class="product-card__download">
@@ -256,8 +257,8 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
         <div class="product-card__right">
             <h1 class="product-card__title"><?=$name?></h1>
             <div class="specific-icons specific-icons_top">
-                <?foreach ($arResult["PROPERTIES"]["DETAIL_ICONS"]["VALUE"] as $arSVG){
-                    echo htmlspecialchars($arSVG);
+                <?foreach ($arResult["PROPERTIES"]["DETAIL_ICONS"]["VALUE"] as $arSVG) {
+                    echo htmlspecialchars_decode($arSVG["TEXT"]);
                 }?>
             </div>
             <p><?=$arResult["DETAIL_TEXT"]?></p>
@@ -275,12 +276,9 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
             </div>
             <div class="product-card__advantages">
                 <ul class="product-card__list">
-                    <li class="product-card__adv">От 40 кг до 5 тонн</li>
-                    <li class="product-card__adv">Простая установка</li>
-                    <li class="product-card__adv">48 часов работы от аккумулятора</li>
-                    <li class="product-card__adv">Компактность и высокая мобильность</li>
-                    <li class="product-card__adv">Малая высота платформы - 27мм !</li>
-                    <li class="product-card__adv">Малая высота платформы - 27мм !</li>
+                    <?foreach ($arResult["PROPERTIES"]["DETAIL_ADVANTAGES"]["VALUE"] as $arList):?>
+                        <li class="product-card__adv"><?=$arList?></li>
+                    <?endforeach;?>
                 </ul>
                 <a href="" class="product-card__more">Больше преимуществ весов уралвес</a>
             </div>
@@ -371,14 +369,14 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
         </div>
     </div>
 
-    <div class="product-card__bottom">
+    <div class="product-card__bottom" id="<?=$itemIds['BIG_SLIDER_ID']?>">
         <div class="container product-card__bottom-container">
             <div class="product-card__content inner__content">
                 <div class="tabs__content tabs__content_active" data-tab-group="card" data-tab="1">
                     <section class="specific">
                         <div class="specific__text">
                             <h3>Описание весового терминала КСК10</h3>
-                            <?=$arResult["PROPERTIES"]["DETAIL_DESCRIPTION"]["VALUE"]["TEXT"]?>
+                            <?=htmlspecialchars_decode($arResult["PROPERTIES"]["DETAIL_DESCRIPTION"]["VALUE"]["TEXT"])?>
                         </div>
                         <div class="specific__text-with-img">
                             <img src="./img/card/termo.png" alt="">
@@ -456,29 +454,13 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
                                 class="simple-slider simple-slider_white specific__simple-slider simple-slider__container swiper-container">
                             <h2 class="simple-slider__title">ПРЕИМУЩЕСТВА ПОДКЛАДНЫХ АВТОМОБИЛЬНЫХ ВЕСОВ</h2>
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide simple-slider-slide">
-                                    <img src="./img/gear.svg" alt="" class="simple-slider-slide__img">
-                                    <span class="simple-slider-slide__title">Малая высота платформы - 27мм !</span>
-                                    <p class="simple-slider-slide__desc">Обеспечивает удобство заезда автомобиля на весы.</p>
-                                </div>
-                                <div class="swiper-slide simple-slider-slide">
-                                    <img src="./img/gear.svg" alt="" class="simple-slider-slide__img">
-                                    <span class="simple-slider-slide__title">Контроль осевых нагрузок </span>
-                                    <p class="simple-slider-slide__desc">Весы могут использоваться для контроля осевых нагрузок
-                                        автотранспортных средств на постах весового контроля (ПВК).</p>
-                                </div>
-                                <div class="swiper-slide simple-slider-slide">
-                                    <img src="./img/gear.svg" alt="" class="simple-slider-slide__img">
-                                    <span class="simple-slider-slide__title">100% защита от штрафа за перегруз транспортного
-												средства</span>
-                                    <p class="simple-slider-slide__desc">Штраф за перегруз автомобиля составляет до 500 000 рублей.
-                                    </p>
-                                </div>
-                                <div class="swiper-slide simple-slider-slide">
-                                    <img src="./img/gear.svg" alt="" class="simple-slider-slide__img">
-                                    <span class="simple-slider-slide__title">Малая высота платформы - 27мм !</span>
-                                    <p class="simple-slider-slide__desc">Обеспечивает удобство заезда автомобиля на весы.</p>
-                                </div>
+                                <?foreach ($arResult["PROPERTIES"]["DETAIL_ADVANTAGES"]["VALUE"] as $key => $value):?>
+                                    <div class="swiper-slide simple-slider-slide">
+                                        <img src="<?=SITE_TEMPLATE_PATH?>/img/gear.svg" alt="" class="simple-slider-slide__img">
+                                        <span class="simple-slider-slide__title"><?=$value?></span>
+                                        <p class="simple-slider-slide__desc"><?=$arResult["PROPERTIES"]["DETAIL_ADVANTAGES"]["DESCRIPTION"][$key]?></p>
+                                    </div>
+                                <?endforeach;?>
                             </div>
                             <div class="simple-slider__bottom">
                                 <div class="simple-slider__pagination pagination"></div>
@@ -520,28 +502,12 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
                             <h3>ХАРАКТЕРИСТИКИ ПОДКЛАНЫХ ВЕСОВ МВСК-5-А (0,55 х 0,75 х 2 шт.)</h3>
                             <div class="specific__table-wrap">
                                 <table>
-                                    <?
-                                    $arValue["VALUE"] = $arResult["PROPERTIES"]["DETAIL_SPECIFICATION"]["VALUE"];
-                                    $arDescription["DESCRIPTION"] = $arResult["PROPERTIES"]["DETAIL_SPECIFICATION"]["DESCRIPTION"];
-                                    $arSpecification = array(
-                                            "VALUE" => $arValue,
-                                            "DESCRIPTION" => $arDescription
-                                    );
-                                    ?>
-
-                                    <?foreach ($arSpecification as $value):?>
-                                        <?foreach ($value as $key => $items):?>
-                                            <tr>
-                                                <?foreach ($value["VALUE"] as $spec):?>
-                                                    <td><?=$spec?></td>
-                                                <?endforeach;?>
-                                                <?foreach ($value["DESCRIPTION"] as $desc):?>
-                                                    <td><?=$desc?></td>
-                                                <?endforeach;?>
-                                            </tr>
-                                        <?endforeach;?>
+                                    <?foreach ($arResult["PROPERTIES"]["DETAIL_SPECIFICATION"]["VALUE"] as $key => $value):?>
+                                        <tr>
+                                            <td><?=$value?></td>
+                                            <td><?=$arResult["PROPERTIES"]["DETAIL_SPECIFICATION"]["DESCRIPTION"][$key]?></td>
+                                        </tr>
                                     <?endforeach;?>
-
                                 </table>
                             </div>
                         </div>
@@ -917,9 +883,8 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
                             </label>
                         </div>
 
-                        <div class="configurator-form__bottom">
-                            <button type="submit"
-                                    class="configurator-form__button button button_red product-card__get-price" data-popup="form-popup">Запросить цену</button>
+                        <div class="configurator-form__bottom" id="<?=$itemIds['BASKET_ACTIONS_ID']?>" style="display: <?=($actualItem['CAN_BUY'] ? '' : 'none')?>;">
+                            <button type="submit" class="configurator-form__button button button_red product-card__get-price" data-popup="form-popup">Запросить цену</button>
                             <a href="javascript:void(0);" class="configurator-form__button button button_blue button_transparent" id="<?=$itemIds['ADD_BASKET_LINK']?>">
                                 <?=$arParams['MESS_BTN_ADD_TO_BASKET']?>
                             </a>
@@ -1011,6 +976,11 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
         </div>
     </div>
 
+	
+    <div style="display:none;" class="product-item-detail-slider-images-container" data-entity="images-container"></div>
+    <div style="display:none;" class="product-item-detail-price-current" id="<?=$itemIds['PRICE_ID']?>"></div>
+
+    
 	<meta itemprop="name" content="<?=$name?>" />
 	<meta itemprop="category" content="<?=$arResult['CATEGORY_PATH']?>" />
 	<?php
@@ -1067,7 +1037,7 @@ if (!empty($arParams['LABEL_PROP_POSITION']))
 		<?php
 	}
 	?>
-</section >
+</section>
 <?php
 if ($haveOffers)
 {

@@ -1059,11 +1059,8 @@
                 "SHOW_TOTAL_PRICE" => "Y"
             )
         );?>
-        <?$APPLICATION->IncludeComponent(
-	"bitrix:form", 
-	"calculate", 
-	array(
-		"AJAX_MODE" => "N",
+        <?$APPLICATION->IncludeComponent("bitrix:form", "calculate", array(
+	"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "N",
 		"AJAX_OPTION_JUMP" => "N",
@@ -1101,7 +1098,10 @@
 			"action" => "action",
 		)
 	),
-	false
+	false,
+	array(
+	"ACTIVE_COMPONENT" => "N"
+	)
 );?>
     </div>
   </div>
