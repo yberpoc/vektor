@@ -98,4 +98,30 @@ if (0 < $arResult['SECTIONS_COUNT'])
 }
 
 $arResult['SECTION']['PICTURE'] = CFile::GetPath($arResult['SECTION']['PICTURE']);
+
+
+//SVG-картинки в одной строке с тайлом и описанием
+$obElement = CIBlockSection::GetList(
+	array(),
+	array('ID' => $arResult['SECTION']['ID'], 'IBLOCK_ID' => $arResult['SECTION']['IBLOCK_ID']),
+	false,
+	array('UF_IMG__SVG'),
+	false
+);
+$resElement = $obElement->Fetch();
+
+$srcFile = CFile::GetPath($resElement['UF_IMG__SVG']);
+
+$obFile = CFile::GetByID($resElement['UF_IMG__SVG']);
+$arFile = $obFile->Fetch();
+
+$img = CFile::ResizeImageGet($arFile['ID'], array('width' => 220, 'height' => 200), BX_RESIZE_IMAGE_EXACT, true);
+$arResult['SECTION']['RIGHT_SVG'] = array('ID' => $arFile['ID'], 'WIDTH' => $arFile['WIDTH'], 'HEIGHT' => $arFile['HEIGHT'], 'SRC' => $img['src']);
+
+//превьюшные картинки продукции
+foreach ($arResult['SECTIONS'] as $arSection) {
+	$img = CFile::ResizeImageGet($arSection['PICTURE']['ID'], array('width' => 345, 'height' => 231), BX_RESIZE_IMAGE_EXACT, true);
+}
+$arResult['SECTIONS'][0]['PICTURE'] = array('ID' => $img['id'], 'SRC' => $img['src'], 'WIDTH' => $img['width'], 'HEIGHT' => $img['height']);
+
 ?>

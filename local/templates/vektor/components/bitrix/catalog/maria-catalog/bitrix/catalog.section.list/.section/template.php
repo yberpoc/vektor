@@ -17,13 +17,13 @@ $strSectionDelete = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELET
 $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM'));
 
 ?>
-<?if(count($arResult['SECTIONS']) > 0):?>
+<?if($arResult['SECTIONS_COUNT'] > 0):?>
 	<div class="container">
 		<div class="inner-top">
 			<div class="inner__info">
 				<h1 class="inner__title"><?=$arResult['SECTION']['NAME']?></h1>
 				<div class="inner__desc">
-					Общий SEO текст
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores doloremque ea earum enim eveniet id incidunt quidem? Alias provident similique unde voluptatum! Amet cumque, dolore in molestiae quibusdam repudiandae voluptate.
 				</div>
 				<div class="inner__info-bottom">
 					<div class="button inner__info-button">Запросить цену</div>
@@ -47,7 +47,7 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
 				</div>
 
 			</div>
-			<img src="<?=$arResult['SECTION']['PICTURE']?>" alt="" class="inner__img">
+			<img src="<?=$arResult['SECTION']['RIGHT_SVG']['SRC']?>" alt="" class="inner__img">
 		</div>
 	</div>
 
