@@ -705,7 +705,7 @@ $containerName = 'container-'.$navParams['NavNum'];
             </div>
 
         </aside>
-
+    </div>
     <?
     $signer = new \Bitrix\Main\Security\Sign\Signer;
     $signedTemplate = $signer->sign($templateName, 'catalog.section');

@@ -54,6 +54,12 @@ while ($product = $products_in_cart->Fetch()) {
     }
     $arResultItems[] = $product;
 }
+<<<<<<< HEAD
+=======
+echo '<pre>';
+print_r($_REQUEST["ID"]);
+echo '</pre>';
+>>>>>>> 0b73d70f5a8cd406d04b76a2f66e04d6e6993739
 
 $count = $_REQUEST["quantity"];
 $ID = $_REQUEST["ID"];
@@ -70,7 +76,11 @@ if ($_GET["method"] == 'deleteQuantity') {
 }
 if ($_GET["method"] == 'delete') {
     CSaleBasket::Delete($ID);
+<<<<<<< HEAD
     header('Location: /');
+=======
+    header('Location: index.php');
+>>>>>>> 0b73d70f5a8cd406d04b76a2f66e04d6e6993739
 }
 
 
@@ -81,6 +91,7 @@ $arResult = array(
 );
 
 
+<<<<<<< HEAD
 // Допустим некоторые поля приходит в запросе
 if (isset($_POST["sub"])) {
     $productId = $arFields["ID"];
@@ -145,7 +156,50 @@ if (isset($_POST["sub"])) {
     $result = $order->save();
     $orderId = $order->getId();
     header('Location: /basket/order_submit.php');
+=======
+if ($USER->IsAuthorized()) {
+	$userID = $USER->GetID();
+} else {
+	$arUser = getUserIDByEmail($email); // получение ID пользователя по email
+	if (empty($arUser)){
+		$userID = createUser($person, $email, $company); // создание пользователя
+	} else {
+		$userID = $arUser["ID"];
+	}
+}
+if (isset($userID)) {
+    setOrder($userID, $person, $company, $phone, $email); // отправка заказа
+} else {
+	echo 'ошибка';
+}
+
+// <функция для отправки заказа>
+
+function setOrder($userID, $person, $company, $phone, $email){
+    if (isset($person) && isset($company) && isset($email)){
+        $order = Order::create(SITE_ID, $userID);
+        $order->setPersonTypeId(2);
+        header('Location: /basket/index.php');
+
+        // Создаёт корзину с товаром
+        $basket = Bitrix\Sale\Basket::loadItemsForFUser(Bitrix\Sale\Fuser::getId(), Bitrix\Main\Context::getCurrent()->getSite());
+        $order->setBasket($basket);
+>>>>>>> 0b73d70f5a8cd406d04b76a2f66e04d6e6993739
 
 
+<<<<<<< HEAD
+=======
+        $propertyCollection->getItemByOrderPropertyId(12)->setValue($person);
+        $propertyCollection->getItemByOrderPropertyId(13)->setValue($email);
+        $propertyCollection->getItemByOrderPropertyId(14)->setValue($phone);
+        $propertyCollection->getItemByOrderPropertyId(8)->setValue($company);
+        //$propertyCollection->getItemByOrderPropertyId(22)->setValue($task);
+
+        $order->doFinalAction(true);
+        $result = $order->save();
+        $orderId = $order->getId();
+        header('Location: /basket/index.php');
+    }
+>>>>>>> 0b73d70f5a8cd406d04b76a2f66e04d6e6993739
 }
 $this->includeComponentTemplate();
