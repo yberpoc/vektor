@@ -1,5 +1,5 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("ВЕКТОР-ПМ");?>
+$APPLICATION->SetTitle("Корзина");?>
     <?$APPLICATION->IncludeComponent(
     "vektorcmp:sale.vektor.basket",
     ".default",

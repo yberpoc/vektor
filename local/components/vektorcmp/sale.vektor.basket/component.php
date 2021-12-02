@@ -44,6 +44,7 @@ while ($product = $products_in_cart->Fetch()) {
     {
         $arFields = $ob->GetFields();
         $img = CFile::GetPath($arFields["PREVIEW_PICTURE"]);
+        $arFields["ID"] = $product['PRODUCT_ID'];
         $arFields["PREVIEW_PICTURE"] = $img;
         $arFields["PRICE"] = $product["PRICE"];
         $arFields["EL_BASKET_ID"] = $product["ID"];
@@ -54,217 +55,97 @@ while ($product = $products_in_cart->Fetch()) {
     $arResultItems[] = $product;
 }
 
-// <получение данных корзины со свойствами товаров из инфоблока>
-$arBasketProps = array();
-$dbBasketItems = CSaleBasket::GetList(
-	array(
-		"NAME" => "ASC",
-		"ID" => "ASC"
-	),
-	array(
-		"FUSER_ID" => CSaleBasket::GetBasketUserID(),
-		"LID" => SITE_ID,
-		"ORDER_ID" => "NULL"
-	),
-	false,
-	false,
-	array(
-		"ID",
-		"CALLBACK_FUNC",
-		"MODULE",
-		"PRODUCT_ID",
-		"QUANTITY",
-		"DELAY",
-		"CAN_BUY",
-		"PRICE",
-		"ORDER_PRICE",
-		"BASE_PRICE",
-		"WEIGHT"
-	)
-);
-
-while ($arItems = $dbBasketItems->Fetch()) {
-	if (strlen($arItems["CALLBACK_FUNC"]) > 0)
-	{
-		CSaleBasket::UpdatePrice($arItems["PRODUCT_ID"]);
-		$arItems = CSaleBasket::GetByID($arItems["ID"]);
-	}
-	$arFilter = array("IBLOCK_ID"=>5, "ID"=>$arItems['PRODUCT_ID'], "ACTIVE_DATE"=>"Y", "ACTIVE"=>"Y");
-	$arSelect = Array("ID", "NAME", "DATE_ACTIVE_FROM", "PREVIEW_PICTURE", "PREVIEW_TEXT", "DETAIL_PAGE_URL");
-	$res = CIBlockElement::GetList(Array(), $arFilter, false, Array("nPageSize"=>50), $arSelect);
-	while ($ob = $res->GetNextElement())
-	{
-		$arFields = $ob->GetFields();
-		$img = CFile::GetPath($arFields["PREVIEW_PICTURE"]);
-		$arFields["PREVIEW_PICTURE"] = $img;
-		$arFields["PRICE"] = $arItems["PRICE"];
-		$arFields["EL_BASKET_ID"] = $arItems["ID"];
-		$arFields["QUANTITY"] = $arItems["QUANTITY"];
-
-		$arBasketProps[] = $arFields;
-	}
-	$arResultItems[] = $arItems;
-}
-echo '<pre>';
-print_r($_REQUEST["ID"]);
-echo '</pre>';
-
 $count = $_REQUEST["quantity"];
 $ID = $_REQUEST["ID"];
-<<<<<<< HEAD
+
 if ($_GET["method"] == 'addQuantity') {
-    $arFields = array("QUANTITY" => ++$count);
+    $arFields = array("QUANTITY" => $count + 1);
     CSaleBasket::Update($ID, $arFields);
-    header('Location: index.php');
+    header('Location: /');
 }
 if ($_GET["method"] == 'deleteQuantity') {
-    $arFields = array("QUANTITY" => --$count);
+    $arFields = array("QUANTITY" => $count - 1);
     CSaleBasket::Update($ID, $arFields);
-    header('Location: index.php');
+    header('Location: /');
 }
 if ($_GET["method"] == 'delete') {
     CSaleBasket::Delete($ID);
-    header('Location: index.php');
-=======
-switch ($_GET["method"]) {
-	case 'addQuantity':
-		$arFields = array("QUANTITY" => ++$count);
-		CSaleBasket::Update($ID, $arFields);
-		header('Location: /basket/index.php');
-		break;
-	case 'delQuantity':
-		$arFields = array("QUANTITY" => --$count);
-		CSaleBasket::Update($ID, $arFields);
-		header('Location: /basket/index.php');
-		break;
-	case 'deleteProduct':
-		CSaleBasket::Delete($ID);
-		header('Location: /basket/index.php');
-		break;
->>>>>>> a217285b1da4b38643c1fe3fdd6e287a9c6b7d8c
+    header('Location: /');
 }
-
-
-
-// <данные введённые пользователем>
-$person = $_REQUEST['person'];
-$company = $_REQUEST['company_name'];
-$phone = $_REQUEST['phone'];
-$email = $_REQUEST['email'];
-// </данные введённые пользователем>
 
 
 
 $arResult = array(
-<<<<<<< HEAD
     "ITEMS" => $arBasket,
     "ERROR" => "",
-=======
-	"ITEMS" => $arBasketProps,
-	"ERROR" => "",
->>>>>>> a217285b1da4b38643c1fe3fdd6e287a9c6b7d8c
 );
 
 
-if ($USER->IsAuthorized()) {
-	$userID = $USER->GetID();
-} else {
-	$arUser = getUserIDByEmail($email); // получение ID пользователя по email
-	if (empty($arUser)){
-		$userID = createUser($person, $email, $company); // создание пользователя
-	} else {
-		$userID = $arUser["ID"];
-	}
+// Допустим некоторые поля приходит в запросе
+if (isset($_POST["sub"])) {
+    $productId = $arFields["ID"];
+    $phone = $_REQUEST["phone"];
+    $name = $_REQUEST["name"];
+    $email = $_REQUEST["email"];
+    $company_name = $_REQUEST["company_name"];
+
+    $siteId = Context::getCurrent()->getSite();
+    $currencyCode = CurrencyManager::getBaseCurrency();
+
+    // Создаёт новый заказ
+    $order = Order::create($siteId, $USER->isAuthorized() ? $USER->GetID() : 539);
+    $order->setPersonTypeId(1);
+    $order->setField('CURRENCY', $currencyCode);
+
+
+    $propertyCollection = $order->getPropertyCollection();
+
+    $propertyCollection->getItemByOrderPropertyId(1)->setValue($name);
+    $propertyCollection->getItemByOrderPropertyId(3)->setValue($email);
+    $propertyCollection->getItemByOrderPropertyId(2)->setValue($phone);
+    $propertyCollection->getItemByOrderPropertyId(4)->setValue($company_name);
+
+
+    // Создаём корзину с одним товаром
+    $basket = Basket::create($siteId);
+    $item = $basket->createItem('catalog', $productId);
+    $item->setFields(array(
+        'QUANTITY' => 1,
+        'CURRENCY' => $currencyCode,
+        'LID' => $siteId,
+        'PRODUCT_PROVIDER_CLASS' => '\CCatalogProductProvider',
+    ));
+    $order->setBasket($basket);
+
+    // Создаём одну отгрузку и устанавливаем способ доставки - "Без доставки" (он служебный)
+    $shipmentCollection = $order->getShipmentCollection();
+    $shipment = $shipmentCollection->createItem();
+    $service = Delivery\Services\Manager::getById(Delivery\Services\EmptyDeliveryService::getEmptyDeliveryServiceId());
+    $shipment->setFields(array(
+        'DELIVERY_ID' => $service['ID'],
+        'DELIVERY_NAME' => $service['NAME'],
+    ));
+    $shipmentItemCollection = $shipment->getShipmentItemCollection();
+    $shipmentItem = $shipmentItemCollection->createItem($item);
+    $shipmentItem->setQuantity($item->getQuantity());
+
+    // Устанавливаем свойства
+    $propertyCollection = $order->getPropertyCollection();
+    $phoneProp = $propertyCollection->getPhone();
+    $phoneProp->setValue($phone);
+    $emailProp = $propertyCollection->getPhone();
+    $phoneProp->setValue($email);
+    $nameProp = $propertyCollection->getPayerName();
+    $nameProp->setValue($name);
+    $companyProp = $propertyCollection->getPayerName();
+    $nameProp->setValue($company_name);
+
+    // Сохраняем
+    $order->doFinalAction(true);
+    $result = $order->save();
+    $orderId = $order->getId();
+    header('Location: /basket/order_submit.php');
+
+
 }
-if (isset($userID)) {
-<<<<<<< HEAD
-    setOrder($userID, $person, $company, $phone, $email); // отправка заказа
-=======
-	setOrder($userID, $person, $company, $phone, $email, $task, $comment, $agreement); // отправка заказа
->>>>>>> a217285b1da4b38643c1fe3fdd6e287a9c6b7d8c
-} else {
-	echo 'ошибка';
-}
-
-// <функция для отправки заказа>
-<<<<<<< HEAD
-function setOrder($userID, $person, $company, $phone, $email){
-    if (isset($person) && isset($company) && isset($email)){
-        $order = Order::create(SITE_ID, $userID);
-        $order->setPersonTypeId(2);
-        header('Location: /basket/index.php');
-
-        // Создаёт корзину с товаром
-        $basket = Bitrix\Sale\Basket::loadItemsForFUser(Bitrix\Sale\Fuser::getId(), Bitrix\Main\Context::getCurrent()->getSite());
-        $order->setBasket($basket);
-
-        $propertyCollection = $order->getPropertyCollection();
-        header('Location: /basket/index.php');
-
-        $propertyCollection->getItemByOrderPropertyId(12)->setValue($person);
-        $propertyCollection->getItemByOrderPropertyId(13)->setValue($email);
-        $propertyCollection->getItemByOrderPropertyId(14)->setValue($phone);
-        $propertyCollection->getItemByOrderPropertyId(8)->setValue($company);
-        //$propertyCollection->getItemByOrderPropertyId(22)->setValue($task);
-
-        $order->doFinalAction(true);
-        $result = $order->save();
-        $orderId = $order->getId();
-        header('Location: /basket/index.php');
-    }
-=======
-function setOrder($userID, $person, $company, $phone, $email, $task, $comment, $agreement){
-	if (isset($person) && isset($company) && isset($email)){
-		$order = Order::create(SITE_ID, $userID);
-		$order->setPersonTypeId(2);
-
-		// Создаёт корзину с товаром
-		$basket = Bitrix\Sale\Basket::loadItemsForFUser(Bitrix\Sale\Fuser::getId(), Bitrix\Main\Context::getCurrent()->getSite());
-		$order->setBasket($basket);
-
-		if ($comment) {
-			$order->setField('USER_DESCRIPTION', $comment); // Устанавливаем поля комментария покупателя
-		}
-
-		$propertyCollection = $order->getPropertyCollection();
-
-		$propertyCollection->getItemByOrderPropertyId(12)->setValue($person);
-		$propertyCollection->getItemByOrderPropertyId(13)->setValue($email);
-		$propertyCollection->getItemByOrderPropertyId(14)->setValue($phone);
-		$propertyCollection->getItemByOrderPropertyId(8)->setValue($company);
-		//$propertyCollection->getItemByOrderPropertyId(22)->setValue($task);
-
-		$order->doFinalAction(true);
-		$result = $order->save();
-		$orderId = $order->getId();
-		header('Location: /basket/successful.php');
-	}
->>>>>>> a217285b1da4b38643c1fe3fdd6e287a9c6b7d8c
-}
-// </функция для отправки заказа>
-
-// <функция создания пользователя>
-function createUser($person, $email, $company) {
-	$user = new CUser;
-	$arFieldsUser = Array(
-		"LOGIN" => $person,
-		"NAME" => $person,
-		"EMAIL" => $email,
-		"PASSWORD" => "123456",
-		"CONFIRM_PASSWORD"  => "123456",
-		"WORK_COMPANY" => $company,
-	);
-	return $user->Add($arFieldsUser);
-}
-// </функция создания пользователя>
-
-// <функция получения ID пользователя по email>
-function getUserIDByEmail($email) {
-	$filter = Array("EMAIL" => $email);
-	$rsUser = CUser::GetList(($by="id"), ($order="desc"), $filter);
-	return $rsUser->Fetch();
-}
-// </функция получения ID пользователя по email>
-
 $this->includeComponentTemplate();
-
