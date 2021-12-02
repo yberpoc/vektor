@@ -55,11 +55,14 @@ while ($product = $products_in_cart->Fetch()) {
     $arResultItems[] = $product;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 echo '<pre>';
 print_r($_REQUEST["ID"]);
 echo '</pre>';
 >>>>>>> 0b73d70f5a8cd406d04b76a2f66e04d6e6993739
+=======
+>>>>>>> 0185f4e8e18d9f0978beb6bf31424bc080a7b13a
 
 $count = $_REQUEST["quantity"];
 $ID = $_REQUEST["ID"];
@@ -77,10 +80,14 @@ if ($_GET["method"] == 'deleteQuantity') {
 if ($_GET["method"] == 'delete') {
     CSaleBasket::Delete($ID);
 <<<<<<< HEAD
+<<<<<<< HEAD
     header('Location: /');
 =======
     header('Location: index.php');
 >>>>>>> 0b73d70f5a8cd406d04b76a2f66e04d6e6993739
+=======
+    header('Location: /');
+>>>>>>> 0185f4e8e18d9f0978beb6bf31424bc080a7b13a
 }
 
 
@@ -92,6 +99,9 @@ $arResult = array(
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0185f4e8e18d9f0978beb6bf31424bc080a7b13a
 // Допустим некоторые поля приходит в запросе
 if (isset($_POST["sub"])) {
     $productId = $arFields["ID"];
@@ -156,6 +166,7 @@ if (isset($_POST["sub"])) {
     $result = $order->save();
     $orderId = $order->getId();
     header('Location: /basket/order_submit.php');
+<<<<<<< HEAD
 =======
 if ($USER->IsAuthorized()) {
 	$userID = $USER->GetID();
@@ -203,3 +214,9 @@ function setOrder($userID, $person, $company, $phone, $email){
 >>>>>>> 0b73d70f5a8cd406d04b76a2f66e04d6e6993739
 }
 $this->includeComponentTemplate();
+=======
+
+
+}
+$this->includeComponentTemplate();
+>>>>>>> 0185f4e8e18d9f0978beb6bf31424bc080a7b13a
