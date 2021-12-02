@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Продукция");
 ?>
 <?$APPLICATION->IncludeComponent(
-    	"bitrix:catalog",
+	"bitrix:catalog",
 	"maria-catalog",
 	array(
 		"ACTION_VARIABLE" => "action",
@@ -254,118 +254,76 @@ $APPLICATION->SetTitle("Продукция");
 		</div>
 	</div>
 	<?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"index_news", 
-	array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"ADD_SECTIONS_CHAIN" => "N",
-		"AJAX_MODE" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"CACHE_FILTER" => "N",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
-		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "",
-		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"DISPLAY_DATE" => "Y",
-		"DISPLAY_NAME" => "Y",
-		"DISPLAY_PICTURE" => "Y",
-		"DISPLAY_PREVIEW_TEXT" => "Y",
-		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
+		"bitrix:news.list",
+		"index_news",
+		array(
+			"ACTIVE_DATE_FORMAT" => "d.m.Y",
+			"ADD_SECTIONS_CHAIN" => "N",
+			"AJAX_MODE" => "N",
+			"AJAX_OPTION_ADDITIONAL" => "",
+			"AJAX_OPTION_HISTORY" => "N",
+			"AJAX_OPTION_JUMP" => "N",
+			"AJAX_OPTION_STYLE" => "Y",
+			"CACHE_FILTER" => "N",
+			"CACHE_GROUPS" => "Y",
+			"CACHE_TIME" => "36000000",
+			"CACHE_TYPE" => "A",
+			"CHECK_DATES" => "Y",
+			"DETAIL_URL" => "",
+			"DISPLAY_BOTTOM_PAGER" => "Y",
+			"DISPLAY_DATE" => "Y",
+			"DISPLAY_NAME" => "Y",
+			"DISPLAY_PICTURE" => "Y",
+			"DISPLAY_PREVIEW_TEXT" => "Y",
+			"DISPLAY_TOP_PAGER" => "N",
+			"FIELD_CODE" => array(
+				0 => "",
+				1 => "",
+			),
+			"FILTER_NAME" => "",
+			"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+			"IBLOCK_ID" => "6",
+			"IBLOCK_TYPE" => "-",
+			"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+			"INCLUDE_SUBSECTIONS" => "Y",
+			"MESSAGE_404" => "",
+			"NEWS_COUNT" => "3",
+			"PAGER_BASE_LINK_ENABLE" => "N",
+			"PAGER_DESC_NUMBERING" => "N",
+			"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+			"PAGER_SHOW_ALL" => "N",
+			"PAGER_SHOW_ALWAYS" => "N",
+			"PAGER_TEMPLATE" => ".default",
+			"PAGER_TITLE" => "Новости",
+			"PARENT_SECTION" => "",
+			"PARENT_SECTION_CODE" => "",
+			"PREVIEW_TRUNCATE_LEN" => "",
+			"PROPERTY_CODE" => array(
+				0 => "",
+				1 => "",
+			),
+			"SET_BROWSER_TITLE" => "N",
+			"SET_LAST_MODIFIED" => "N",
+			"SET_META_DESCRIPTION" => "N",
+			"SET_META_KEYWORDS" => "N",
+			"SET_STATUS_404" => "N",
+			"SET_TITLE" => "N",
+			"SHOW_404" => "N",
+			"SORT_BY1" => "ACTIVE_FROM",
+			"SORT_BY2" => "SORT",
+			"SORT_ORDER1" => "DESC",
+			"SORT_ORDER2" => "ASC",
+			"STRICT_SECTION_CHECK" => "N",
+			"COMPONENT_TEMPLATE" => "index_news"
 		),
-		"FILTER_NAME" => "",
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "6",
-		"IBLOCK_TYPE" => "-",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-		"INCLUDE_SUBSECTIONS" => "Y",
-		"MESSAGE_404" => "",
-		"NEWS_COUNT" => "3",
-		"PAGER_BASE_LINK_ENABLE" => "N",
-		"PAGER_DESC_NUMBERING" => "N",
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "N",
-		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_TEMPLATE" => ".default",
-		"PAGER_TITLE" => "Новости",
-		"PARENT_SECTION" => "",
-		"PARENT_SECTION_CODE" => "",
-		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"SET_BROWSER_TITLE" => "N",
-		"SET_LAST_MODIFIED" => "N",
-		"SET_META_DESCRIPTION" => "N",
-		"SET_META_KEYWORDS" => "N",
-		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "N",
-		"SHOW_404" => "N",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC",
-		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "index_news"
-	),
-	false
-);?>
+		false
+	);?>
 
 </div>
 <!-- END NEWS -->
 
 <!-- SOLUTIONS -->
 <section class="solutions section_solutions">
-
-    <div class="container solutions__container">
-        <div class="solutions__top">
-            <div class="solutions__title">
-                Подберите решение для вашего бизнеса!
-            </div>
-            <div class="solutions__desc">
-                Здесь вы найдете материалы о том, как применяются наши весы в разных отраслей.
-                Можете подобрать готовые комплекты для решения задач своего бизнеса.
-                <b>17 лет опыта и практики</b>
-            </div>
-            <a href="" class="solutions__button button button_rounded">
-                Все решения
-            </a>
-        </div>
-        <div class="solutions__cards">
-            <a href="" class="solutions__card">
-                <div class="solutions__card-image" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/catalog/solutions_1.png)"></div>
-                <span class="solutions__card-name">Мясная промышленность</span>
-                <span class="solutions__card-dark"></span>
-            </a>
-            <a href="" class="solutions__card">
-                <div class="solutions__card-image" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/catalog/solutions_2.png)"></div>
-                <span class="solutions__card-name">Железнодорожные терминалы</span>
-                <span class="solutions__card-dark"></span>
-            </a>
-            <a href="" class="solutions__card">
-                <div class="solutions__card-image" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/catalog/solutions_3.png)"></div>
-                <span class="solutions__card-name">Дорожный контроль</span>
-                <span class="solutions__card-dark"></span>
-            </a>
-            <a href="" class="solutions__card">
-                <div class="solutions__card-image" style="background-image: url(<?=SITE_TEMPLATE_PATH?>/img/catalog/solutions_4.png)"></div>
-                <span class="solutions__card-name">Сельское хозяйство</span>
-                <span class="solutions__card-dark"></span>
-            </a>
-        </div>
-    </div>
-    <div class="solutions__back-text back-text container">
-        <span class="solutions__bright-word">Опыт.</span> Репутация. Надежность
-    </div>
-    <span class="solutions__big-letter">
 
 	<div class="container solutions__container">
 		<div class="solutions__top">
@@ -409,71 +367,12 @@ $APPLICATION->SetTitle("Продукция");
 	</div>
 	<span class="solutions__big-letter">
 			О
-		</span>
+	</span>
 </section>
 <!-- END SOLUTIONS -->
 
 <!-- OUR PRODUCTION -->
 <section class="our-production">
-
-    <div class="our-production__container">
-        <div class="our-production__content">
-            <h2 class="our-production__title">Нашу продукцию используют</h2>
-            <p class="our-production__desc">более 8000 компаний в России, Белоруссии, Казахстане, Узбекистане, Украине, а
-                также Европе используют продукцию Вектор-ПМ</p>
-            <div class="our-production-pagination"></div>
-            <div class="our-production-nav">
-                <button class="our-production-nav__prev our-production-nav__button">
-                    <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M9.28625 15.0523C9.67965 15.4409 9.68159 16.0754 9.29058 16.4664C8.90125 16.8558 8.27002 16.8558 7.88069 16.4664L-0.000122821 8.5856L7.88069 0.704845C8.27002 0.315519 8.90125 0.315519 9.29057 0.704847C9.68159 1.09586 9.67965 1.73042 9.28624 2.11904L3.7523 7.5856L21 7.5856C21.5523 7.5856 22 8.03331 22 8.5856C22 9.13788 21.5523 9.5856 21 9.5856L3.7523 9.5856L9.28625 15.0523Z"
-                            fill="#025BFF" />
-                    </svg>
-                </button>
-                <button class="our-production-nav__next our-production-nav__button">
-                    <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M9.28625 15.0523C9.67965 15.4409 9.68159 16.0754 9.29058 16.4664C8.90125 16.8558 8.27002 16.8558 7.88069 16.4664L-0.000122821 8.5856L7.88069 0.704845C8.27002 0.315519 8.90125 0.315519 9.29057 0.704847C9.68159 1.09586 9.67965 1.73042 9.28624 2.11904L3.7523 7.5856L21 7.5856C21.5523 7.5856 22 8.03331 22 8.5856C22 9.13788 21.5523 9.5856 21 9.5856L3.7523 9.5856L9.28625 15.0523Z"
-                            fill="#025BFF" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <div class="our-production__slider swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide our-production-item">
-                    <a href="" class="our-production-item__link">
-                        <img src="<?=SITE_TEMPLATE_PATH?>/img/clients-1.png" alt="" class="our-production-item__img">
-                    </a>
-                </div>
-                <div class="swiper-slide our-production-item">
-                    <a href="" class="our-production-item__link">
-                        <img src="<?=SITE_TEMPLATE_PATH?>/img/clients-1.png" alt="" class="our-production-item__img">
-                    </a>
-                </div>
-                <div class="swiper-slide our-production-item">
-                    <a href="" class="our-production-item__link">
-                        <img src="<?=SITE_TEMPLATE_PATH?>/img/clients-1.png" alt="" class="our-production-item__img">
-                    </a>
-                </div>
-                <div class="swiper-slide our-production-item">
-                    <a href="" class="our-production-item__link">
-                        <img src="<?=SITE_TEMPLATE_PATH?>/img/clients-1.png" alt="" class="our-production-item__img">
-                    </a>
-                </div>
-                <div class="swiper-slide our-production-item">
-                    <a href="" class="our-production-item__link">
-                        <img src="<?=SITE_TEMPLATE_PATH?>/img/clients-1.png" alt="" class="our-production-item__img">
-                    </a>
-                </div>
-                <div class="swiper-slide our-production-item">
-                    <a href="" class="our-production-item__link">
-                        <img src="<?=SITE_TEMPLATE_PATH?>/img/clients-1.png" alt="" class="our-production-item__img">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
 
 	<div class="our-production__container">
 		<div class="our-production__content">
@@ -540,26 +439,6 @@ $APPLICATION->SetTitle("Продукция");
 <!-- .video-block -->
 <section class="section video-block">
 
-    <div class="video-block__preview">
-        <div class="video-block__bg" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/video-block-bg.png');"></div>
-        <div class="video-block__info">
-            <div class="video-block__mini-title">Посмотреть видео</div>
-            <h4 class="video-block__title">
-                сделано в Перми <b>«Вектор-ПМ»</b>
-            </h4>
-        </div>
-
-        <div class="video-block__icon-wrap">
-            <svg class="video-block__icon" width="80" height="101" viewBox="0 0 80 101" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L78.3809 50.4048L1 99.8095V1Z" stroke="white" stroke-opacity="0.35" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-        </div>
-
-        <div class="video-block__line"></div>
-    </div>
-    <div class="video-block__player youtube-video" data-video-id="M7lc1UVf-VE" id="player1"></div>
 	<div class="video-block__preview">
 		<div class="video-block__bg" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/img/video-block-bg.png');"></div>
 		<div class="video-block__info">
