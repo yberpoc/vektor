@@ -1,11 +1,11 @@
 <? if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 global $USER;
 use Bitrix\Main\Context,
-	Bitrix\Currency\CurrencyManager,
-	Bitrix\Sale\Order,
-	Bitrix\Sale\Basket,
-	Bitrix\Sale\Delivery,
-	Bitrix\Sale\PaySystem;
+    Bitrix\Currency\CurrencyManager,
+    Bitrix\Sale\Order,
+    Bitrix\Sale\Basket,
+    Bitrix\Sale\Delivery,
+    Bitrix\Sale\PaySystem;
 CModule::IncludeModule("sale");
 CModule::IncludeModule("catalog");
 CModule::IncludeModule("iblock");
