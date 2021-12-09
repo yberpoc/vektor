@@ -3,7 +3,7 @@
 
 $arResultItemsCount = count($arResult["ITEMS"]);?>
     <?if($arResultItemsCount > 0):?>
-        <form class="order-form" method="post">
+        <form class="order-form" method="post" action="">
             <div class="order-items">
                 <h2 class="order-items__title">Ваш заказ</h2>
                 <ul class="order-items__list">
@@ -32,15 +32,23 @@ $arResultItemsCount = count($arResult["ITEMS"]);?>
                             </a>
                             <a href="#" class="order-items__img" style="background-image: url(<?=$arItem["PREVIEW_PICTURE"];?>);"></a>
                             <a href="#" class="order-items__name"><?=$arItem["NAME"];?></a>
-
-                            <div class="order-items__price"><?=$arItem['PRICE']?></a></div>
+                            <?
+                                $quantity = 0;
+                                $total = 0;
+                                if (count($arResult["ITEMS"]>0)):
+                                    $quantity += $arItem['QUANTITY'];
+                                    $total += $arItem['PRICE'] * $arItem['QUANTITY'];
+                            ?>
+                            <?endif;?>
+                            <div class="order-items__price"><?=$total;?></div>
                             <div class="order-items__count">
                                 <a class="order-items__minus" href="index.php?method=deleteQuantity&ID=<?=$arItem["EL_BASKET_ID"]?>&quantity=<?=$arItem["QUANTITY"]?>">-</a>
-                                <span class="order-items__value">1</span>
+                                <span class="order-items__value"><?=$arItem['QUANTITY'];?></span>
                                 <a class="order-items__plus" href="index.php?method=addQuantity&ID=<?=$arItem["EL_BASKET_ID"]?>&quantity=<?=$arItem["QUANTITY"]?>">+</a>
                             </div>
                         </li>
                     <?endforeach;?>
+
 
 
                 </ul>
@@ -56,7 +64,7 @@ $arResultItemsCount = count($arResult["ITEMS"]);?>
             <div class="order-form__inputs">
                 <div class="form__input order-form__input">
                     <label>Введите ваше имя*:</label>
-                    <input type="text" name="person" class="input" required="required"/>
+                    <input type="text" name="name" class="input" required="required"/>
                 </div>
 
 
@@ -75,14 +83,12 @@ $arResultItemsCount = count($arResult["ITEMS"]);?>
                     <textarea class="order-form__textarea" type="text" name="company_name" autocomplete="on" required="required"></textarea>
                 </div>
 
-            <button type="submit" class="button order-form__submit">Отправить</button>
+            <button type="submit" name="sub" class="button order-form__submit">Отправить</button>
             <p class="order-form__personal">
                 <a class="order-form__personal-link" href="#">
                     Нажимая на кнопку «Отправить», я даю согласие на обработку персональных данных
                 </a>
             </p>
-
-
 
         </form>
 
