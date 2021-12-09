@@ -119,37 +119,41 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
 
 				<?if($arResult['SECTION']['DEPTH_LEVEL'] == 2):?>
 					<?$APPLICATION->IncludeComponent(
-						"bitrix:catalog.smart.filter",
-						"filter",
-						Array(
-							"CACHE_GROUPS" => "Y",
-							"CACHE_TIME" => "36000000",
-							"CACHE_TYPE" => "A",
-							"CONVERT_CURRENCY" => "Y",
-							"CURRENCY_ID" => "RUB",
-							"DISPLAY_ELEMENT_COUNT" => "Y",
-							"FILTER_NAME" => "arrFilter",
-							"FILTER_VIEW_MODE" => "vertical",
-							"HIDE_NOT_AVAILABLE" => "N",
-							"IBLOCK_ID" => "5",
-							"IBLOCK_TYPE" => "catalog",
-							"PAGER_PARAMS_NAME" => "arrPager",
-							"POPUP_POSITION" => "left",
-							"PREFILTER_NAME" => "smartPreFilter",
-							"PRICE_CODE" => array(0=>"BASE",),
-							"SAVE_IN_SESSION" => "N",
-							"SECTION_CODE" => "",
-							"SECTION_CODE_PATH" => "",
-							"SECTION_DESCRIPTION" => "-",
-							"SECTION_ID" => $_REQUEST["SECTION_ID"],
-							"SECTION_TITLE" => "-",
-							"SEF_MODE" => "N",
-							"SEF_RULE" => "",
-							"SMART_FILTER_PATH" => "",
-							"TEMPLATE_THEME" => "blue",
-							"XML_EXPORT" => "N"
-						)
-					);?>
+	"bitrix:catalog.smart.filter", 
+	"filter", 
+	array(
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CONVERT_CURRENCY" => "Y",
+		"CURRENCY_ID" => "RUB",
+		"DISPLAY_ELEMENT_COUNT" => "Y",
+		"FILTER_NAME" => "arrFilter",
+		"FILTER_VIEW_MODE" => "vertical",
+		"HIDE_NOT_AVAILABLE" => "N",
+		"IBLOCK_ID" => "5",
+		"IBLOCK_TYPE" => "catalog",
+		"PAGER_PARAMS_NAME" => "arrPager",
+		"POPUP_POSITION" => "left",
+		"PREFILTER_NAME" => "smartPreFilter",
+		"PRICE_CODE" => array(
+			0 => "BASE",
+		),
+		"SAVE_IN_SESSION" => "N",
+		"SECTION_CODE" => "5",
+		"SECTION_CODE_PATH" => "",
+		"SECTION_DESCRIPTION" => "-",
+		"SECTION_ID" => $_REQUEST["SECTION_ID"],
+		"SECTION_TITLE" => "-",
+		"SEF_MODE" => "N",
+		"SEF_RULE" => "",
+		"SMART_FILTER_PATH" => "",
+		"TEMPLATE_THEME" => "blue",
+		"XML_EXPORT" => "N",
+		"COMPONENT_TEMPLATE" => "filter"
+	),
+	false
+);?>
 				<?endif;?>
 
 				<div data-content="aside-slider"></div>

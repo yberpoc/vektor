@@ -12,18 +12,8 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 
-$templateData = array(
-	'TEMPLATE_THEME' => $this->GetFolder().'/themes/'.$arParams['TEMPLATE_THEME'].'/colors.css',
-	'TEMPLATE_CLASS' => 'bx-'.$arParams['TEMPLATE_THEME']
-);
-
-if (isset($templateData['TEMPLATE_THEME']))
-{
-	$this->addExternalCss($templateData['TEMPLATE_THEME']);
-}
-$this->addExternalCss("/bitrix/css/main/bootstrap.css");
-$this->addExternalCss("/bitrix/css/main/font-awesome.css");
 ?>
+
 <div class="inner__filter filter">
 		<div class="filter__header">
             <div class="filter__header-title">
@@ -123,40 +113,39 @@ $this->addExternalCss("/bitrix/css/main/font-awesome.css");
 				<?
 				}
 				?>
-			</div>
-
-			<div class="filter__buttons">
-                <button
-                    class="filter__reset"
-                    type="submit"
-                    id="del_filter"
-                    name="del_filter"
-                    value="<?=GetMessage("CT_BCSF_DEL_FILTER")?>"
-                >
-	                <?=GetMessage("CT_BCSF_DEL_FILTER")?>
-                    <div class="filter__reset-icon">х</div>
-                </button>
-                <a href="<?echo $arResult["FILTER_URL"]?>" target="">
-                    <button class="filter__show button" id="modef">
+                <div class="filter__buttons">
+                    <button
+                            class="filter__reset"
+                            type="submit"
+                            id="del_filter"
+                            name="del_filter"
+                            value="<?=GetMessage("CT_BCSF_DEL_FILTER")?>"
+                    >
+						<?=GetMessage("CT_BCSF_DEL_FILTER")?>
+                        <div class="filter__reset-icon">х</div>
+                    </button>
+                    <a href="<?echo $arResult["FILTER_URL"]?>" target="">
+                        <button class="filter__show button" id="modef">
                         <span>
                             Показать
                             <b>(
                                 <?=GetMessage(
-                                    "CT_BCSF_FILTER_COUNT",
-                                    array(
-                                        "#ELEMENT_COUNT#" => '<div class="filter__show-counter" id="modef_num">'.
-                                            intval($arResult["ELEMENT_COUNT"]).
-                                            '</div>'
-                                    )
+	                                "CT_BCSF_FILTER_COUNT",
+	                                array(
+		                                "#ELEMENT_COUNT#" => '<div class="filter__show-counter" id="modef_num">'.
+			                                intval($arResult["ELEMENT_COUNT"]).
+			                                '</div>'
+	                                )
                                 );?>
                             )</b>
                         </span>
-                    </button>
-                </a>
+                        </button>
+                    </a>
+                </div>
+                <div class="clb"></div>
 			</div>
-			<div class="clb"></div>
 		</form>
 </div>
 <script type="text/javascript">
-	var smartFilter = new JCSmartFilter('<?echo CUtil::JSEscape($arResult["FORM_ACTION"])?>', '<?=CUtil::JSEscape($arParams["FILTER_VIEW_MODE"])?>', <?=CUtil::PhpToJSObject($arResult["JS_FILTER_PARAMS"])?>);
+	var smartFilter = new JCSmartFilter('<?echo CUtil::JSEscape($arResult["FORM_ACTION"])?>', <?=CUtil::PhpToJSObject($arResult["JS_FILTER_PARAMS"])?>);
 </script>
