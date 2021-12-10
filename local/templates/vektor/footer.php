@@ -130,10 +130,10 @@
   </div>
 </footer>
 
-  <div class="popup" id="popup-photo">
+<div class="popup" id="popup-photo">
     <div class="popup__close"></div>
     <div class="popup__content"></div>
-  </div>
+</div>
 
   <div class="order">
     <div class="container order__container">
