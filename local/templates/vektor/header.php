@@ -17,6 +17,7 @@
 
 <body>
     <div id="panel"><?$APPLICATION->ShowPanel();?></div>
+
   	<!-- HEADER -->
 	<header class="header">
 		<div class="header-top">
@@ -41,15 +42,97 @@
 							stroke="#025BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 					</svg>
 				</a>
+                <div class="popup popup_side" id="form-popup">
+                    <div class="popup__close"></div>
+                    <div class="popup__content">
+						<?$APPLICATION->IncludeComponent(
+							"bitrix:form",
+							"vektor.form.main",
+							array(
+								"AJAX_MODE" => "N",
+								"AJAX_OPTION_ADDITIONAL" => "",
+								"AJAX_OPTION_HISTORY" => "N",
+								"AJAX_OPTION_JUMP" => "N",
+								"AJAX_OPTION_STYLE" => "Y",
+								"CACHE_TIME" => "3600",
+								"CACHE_TYPE" => "A",
+								"CHAIN_ITEM_LINK" => "",
+								"CHAIN_ITEM_TEXT" => "",
+								"EDIT_ADDITIONAL" => "N",
+								"EDIT_STATUS" => "Y",
+								"IGNORE_CUSTOM_TEMPLATE" => "N",
+								"NAME_TEMPLATE" => "",
+								"NOT_SHOW_FILTER" => array(
+									0 => "name",
+									1 => "phone",
+									2 => "email",
+									3 => "message",
+									4 => "file",
+									5 => "",
+								),
+								"NOT_SHOW_TABLE" => array(
+									0 => "",
+									1 => "",
+								),
+								"RESULT_ID" => $_REQUEST[RESULT_ID],
+								"SEF_MODE" => "N",
+								"SHOW_ADDITIONAL" => "N",
+								"SHOW_ANSWER_VALUE" => "N",
+								"SHOW_EDIT_PAGE" => "Y",
+								"SHOW_LIST_PAGE" => "Y",
+								"SHOW_STATUS" => "Y",
+								"SHOW_VIEW_PAGE" => "Y",
+								"START_PAGE" => "new",
+								"SUCCESS_URL" => "",
+								"USE_EXTENDED_ERRORS" => "N",
+								"WEB_FORM_ID" => "2",
+								"COMPONENT_TEMPLATE" => "vektor.form",
+								"VARIABLE_ALIASES" => array(
+									"action" => "action",
+								)
+							),
+							false
+						);?>
+                    </div>
+                    <!--ФОРМА-->
+                </div>
 				<button class="header__button button button_rounded">Кабинет дилера</button>
 				<div class="header-basket__wrap">
 					<button class="header-basket">
+						<?
+						CModule::IncludeModule("sale");
+						CModule::IncludeModule("catalog");
+						CModule::IncludeModule("iblock");
+
+						$arBasket = array();
+						$products_in_cart = CSaleBasket::GetList(
+							array(), // сортировка
+							array(
+								'FUSER_ID' => CSaleBasket::GetBasketUserID(),
+								'LID' => SITE_ID,
+								'ORDER_ID' => NULL
+							),
+							false, // группировать
+							false, // постраничная навигация
+							array(
+								"ID",
+								"QUANTITY",
+							)
+						);
+						while ($product = $products_in_cart->Fetch()) {
+                            $arResult[] = $product['QUANTITY'];
+						}
+                        $arResult['TOTAL_QUANTITY'] = 0;
+						foreach ($arResult as $item){
+							$arResult['TOTAL_QUANTITY'] += $item;
+						}
+						?>
 						<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path
 								d="M0 1H3.80952L6.3619 13.7524C6.44899 14.1909 6.68753 14.5847 7.03576 14.865C7.38398 15.1454 7.81971 15.2943 8.26667 15.2857H17.5238C17.9708 15.2943 18.4065 15.1454 18.7547 14.865C19.1029 14.5847 19.3415 14.1909 19.4286 13.7524L20.9524 5.7619H4.7619M8.57145 20.0476C8.57145 20.5736 8.14505 21 7.61906 21C7.09308 21 6.66668 20.5736 6.66668 20.0476C6.66668 19.5217 7.09308 19.0953 7.61906 19.0953C8.14505 19.0953 8.57145 19.5217 8.57145 20.0476ZM19.0476 20.0476C19.0476 20.5736 18.6212 21 18.0953 21C17.5693 21 17.1429 20.5736 17.1429 20.0476C17.1429 19.5217 17.5693 19.0953 18.0953 19.0953C18.6212 19.0953 19.0476 19.5217 19.0476 20.0476Z"
 								stroke="#025BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 						</svg>
-						<span class="header-basket__count">0</span>
+						<span class="header-basket__count"><?=$arResult['TOTAL_QUANTITY']?></span>
 					</button>
 				</div>
 				<button class="header-burger">
@@ -60,25 +143,25 @@
 		<div class="header-bottom">
 			<div class="container header-bottom__container">
                 <?$APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"vektor.top.menu", 
-	array(
-		"ALLOW_MULTI_SELECT" => "N",
-		"CHILD_MENU_TYPE" => "left",
-		"DELAY" => "N",
-		"MAX_LEVEL" => "4",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_TYPE" => "N",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"ROOT_MENU_TYPE" => "top",
-		"USE_EXT" => "Y",
-		"COMPONENT_TEMPLATE" => "vektor.top.menu",
-		"MENU_THEME" => "site"
-	),
-	false
-);?>
+                    "bitrix:menu",
+                    "vektor.top.menu",
+                    array(
+                        "ALLOW_MULTI_SELECT" => "N",
+                        "CHILD_MENU_TYPE" => "left",
+                        "DELAY" => "N",
+                        "MAX_LEVEL" => "4",
+                        "MENU_CACHE_GET_VARS" => array(
+                        ),
+                        "MENU_CACHE_TIME" => "3600",
+                        "MENU_CACHE_TYPE" => "N",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "ROOT_MENU_TYPE" => "top",
+                        "USE_EXT" => "Y",
+                        "COMPONENT_TEMPLATE" => "vektor.top.menu",
+                        "MENU_THEME" => "site"
+                    ),
+                    false
+                );?>
 				
 				<div class="header-search">
 					<a href="" class="header-search__button">
@@ -306,7 +389,7 @@
 							d="M0 1H3.80952L6.3619 13.7524C6.44899 14.1909 6.68753 14.5847 7.03576 14.865C7.38398 15.1454 7.81971 15.2943 8.26667 15.2857H17.5238C17.9708 15.2943 18.4065 15.1454 18.7547 14.865C19.1029 14.5847 19.3415 14.1909 19.4286 13.7524L20.9524 5.7619H4.7619M8.57145 20.0476C8.57145 20.5736 8.14505 21 7.61906 21C7.09308 21 6.66668 20.5736 6.66668 20.0476C6.66668 19.5217 7.09308 19.0953 7.61906 19.0953C8.14505 19.0953 8.57145 19.5217 8.57145 20.0476ZM19.0476 20.0476C19.0476 20.5736 18.6212 21 18.0953 21C17.5693 21 17.1429 20.5736 17.1429 20.0476C17.1429 19.5217 17.5693 19.0953 18.0953 19.0953C18.6212 19.0953 19.0476 19.5217 19.0476 20.0476Z"
 							stroke="#025BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 					</svg>
-					<span class="header-basket__count">0</span>
+					<span class="header-basket__count"><?=$arResult['TOTAL_QUANTITY']?></span>
 				</button>
 				<button class="header-mobile__close"></button>
 			</div>
@@ -1031,7 +1114,7 @@
               d="M0 1H3.80952L6.3619 13.7524C6.44899 14.1909 6.68753 14.5847 7.03576 14.865C7.38398 15.1454 7.81971 15.2943 8.26667 15.2857H17.5238C17.9708 15.2943 18.4065 15.1454 18.7547 14.865C19.1029 14.5847 19.3415 14.1909 19.4286 13.7524L20.9524 5.7619H4.7619M8.57145 20.0476C8.57145 20.5736 8.14505 21 7.61906 21C7.09308 21 6.66668 20.5736 6.66668 20.0476C6.66668 19.5217 7.09308 19.0953 7.61906 19.0953C8.14505 19.0953 8.57145 19.5217 8.57145 20.0476ZM19.0476 20.0476C19.0476 20.5736 18.6212 21 18.0953 21C17.5693 21 17.1429 20.5736 17.1429 20.0476C17.1429 19.5217 17.5693 19.0953 18.0953 19.0953C18.6212 19.0953 19.0476 19.5217 19.0476 20.0476Z"
               stroke="#025BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-          <span class="header-basket__count">0</span>
+          <span class="header-basket__count"><?=$arResult['TOTAL_QUANTITY']?></span>
         </button>
         </div>
         <button class="header-burger">
