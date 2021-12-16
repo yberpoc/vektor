@@ -434,7 +434,6 @@ $APPLICATION->SetTitle("Продукция");
 </section>
     <!-- END OUR PRODUCTION -->
 
-
     </section>
     <!-- END OUR PRODUCTION -->
 
